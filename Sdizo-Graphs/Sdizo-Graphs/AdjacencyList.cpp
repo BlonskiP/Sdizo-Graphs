@@ -16,7 +16,7 @@ AdjacencyList::AdjacencyList()
 			file >> start;
 			file >> end;
 			file >> weight;
-			addEdge(start, end, weight);
+			addEdge(start, end, weight, i);
 		
 	}
 	file.close();
@@ -51,9 +51,11 @@ AdjacencyList::~AdjacencyList()
 }
 
 
-void AdjacencyList::addEdge(int start, int end, int cost)
+void AdjacencyList::addEdge(int start, int end, int cost, int number)
 {
+	
 	p = new Edge(start,end,cost);
+	p->number = number;
 	p->next = list[start];
 	list[start] = p;
 	
@@ -81,22 +83,4 @@ void AdjacencyList::print()
 
 void AdjacencyList::changeRep()
 {
-}
-bool AdjacencyList::loadFromFile()
-{
-	
-	int t1, a;
-	file.open("graf.txt");
-	if (file.is_open())
-	{
-		file >> a;
-		V = a;
-		file >> a;
-		E = a;
-		return true;
-	}
-	else {
-		std::cout << "Nie moge wczytac pliku" << std::endl;
-		return false;
-	}
 }
