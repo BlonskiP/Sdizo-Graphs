@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 struct Edge
 { public:
 	Edge(int f, int t, int c)
@@ -9,9 +10,9 @@ struct Edge
 		to = t;
 		cost = c;
 	}
-	Edge() {};
+	Edge() { cost = 0; };
 	unsigned int number;
-	int cost;
+	int cost = 0;
 	int from;
 	int to;
 	Edge *next;

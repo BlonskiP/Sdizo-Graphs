@@ -34,11 +34,37 @@ void IncidenceMatrix::addVertex(int i)
 }
 
 void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
-	list[start][number].cost = 5;
+	list[end][number].cost = -cost;
+	list[start][number].cost = cost;
+	
 }
 
 void IncidenceMatrix::print()
 {
+	int temp;
+	std::cout << " ";
+	for (int i = 0 ; i < E; i++)
+	{
+		std::cout << std::setw(2);
+		std::cout << i;
+	}
+	std::cout << std::endl << std::endl;
+	for (int i = 0; i < V; i++)
+	{
+		std::cout << i;
+		
+		for (int k = 0; k < E; k++)
+		{
+			temp = list[i][k].cost;
+			if (temp < 0)
+				std::cout<<std::setw(1);
+			else 
+				std::cout << std::setw(2);
+			std::cout << temp;
+		}
+		std::cout << std::endl;
+	}
+	
 }
 
 void IncidenceMatrix::changeRep()
