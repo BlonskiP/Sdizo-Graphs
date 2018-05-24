@@ -8,6 +8,7 @@ AdjacencyList::AdjacencyList()
 {
 	int start, end, weight;
 	loadFromFile();
+	createEdgeHeap();
 	list = new Edge *[V];
 	for (int i = 0; i < V; i++) addVertex(i);
 	for (int i = 0; i < E; i++)
@@ -74,7 +75,7 @@ void AdjacencyList::print()
 		p = list[i];
 		while (p)
 		{
-			std::cout << " Waga: " << p->cost << " do " << p->to << std::endl;
+			std::cout << " Waga: " << p->cost << " do " << p->to << " numer" << p->number << std::endl;
 			p = p->next;
 		}
 		std::cout << std::endl;
@@ -83,4 +84,28 @@ void AdjacencyList::print()
 
 void AdjacencyList::changeRep()
 {
+}
+
+void AdjacencyList::fillEdgeHeap()
+{
+	Edge *tmp;
+	for (int i = 0; i < V; i++)
+	{
+		tmp = list[i];
+		while (tmp != nullptr)
+		{
+			heap->push(*tmp);
+			
+			tmp = tmp->next;
+		}
+		
+	}
+
+}
+
+void AdjacencyList::kruskalSolver()
+{
+	kruskal = new KruskalSolver( V,E, heap);
+	kruskal->solve();
+//	kruskal->kruskalPrint();
 }

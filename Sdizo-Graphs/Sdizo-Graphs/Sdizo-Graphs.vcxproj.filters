@@ -30,6 +30,12 @@
     <ClInclude Include="IncidenceMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EdgeHeap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KruskalSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IncidenceMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeHeap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KruskalSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

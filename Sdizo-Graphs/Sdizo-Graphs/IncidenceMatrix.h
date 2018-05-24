@@ -10,5 +10,7 @@ public:
 	void addEdge(int start, int end, int cost, int number);
 	void print(); //prints
 	void changeRep(); //changes representaion
+	void fillEdgeHeap();
+	void kruskalSolver();
 };
 

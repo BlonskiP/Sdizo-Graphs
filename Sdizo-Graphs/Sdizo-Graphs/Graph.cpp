@@ -32,3 +32,8 @@ bool Graph::loadFromFile()
 		}
 	
 }
+
+void Graph::createEdgeHeap()
+{
+	heap = new EdgeHeap(E);
+}

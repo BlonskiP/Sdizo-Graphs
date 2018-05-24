@@ -6,6 +6,7 @@ IncidenceMatrix::IncidenceMatrix()
 {
 	int start, end, weight;
 	loadFromFile();
+	createEdgeHeap();
 	list = new Edge *[V];
 	for (int i = 0; i < V; i++)
 		addVertex(i);
@@ -68,5 +69,13 @@ void IncidenceMatrix::print()
 }
 
 void IncidenceMatrix::changeRep()
+{
+}
+
+void IncidenceMatrix::fillEdgeHeap()
+{
+}
+
+void IncidenceMatrix::kruskalSolver()
 {
 }

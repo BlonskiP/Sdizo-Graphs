@@ -2,28 +2,17 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
-struct Edge
-{ public:
-	Edge(int f, int t, int c)
-	{
-		from = f;
-		to = t;
-		cost = c;
-	}
-	Edge() { cost = 0; };
-	unsigned int number;
-	int cost = 0;
-	int from;
-	int to;
-	Edge *next;
-};
+#include "EdgeHeap.h"
+#include "KruskalSolver.h"
 
 class Graph
 {
 public:
 	std::fstream file;
 	Edge * *list;
+	EdgeHeap * heap;
 	Edge *p, *r; // Pointery pomocnicze
+	KruskalSolver *kruskal;
 	int V = 0;
 	int E = 0;
 	Graph();
@@ -46,5 +35,8 @@ public:
 	{
 		E = edge;
 	}
+	void createEdgeHeap();
+	virtual void fillEdgeHeap() = 0;
+	virtual void kruskalSolver() = 0;
 };
 

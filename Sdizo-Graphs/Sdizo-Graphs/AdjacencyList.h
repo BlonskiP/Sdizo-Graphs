@@ -14,7 +14,8 @@ public:
 	void addVertex(int i);
 	void print(); //prints
 	void changeRep(); //changes representaion
-	
+	void fillEdgeHeap();
+	void kruskalSolver();
 	
 };
 
