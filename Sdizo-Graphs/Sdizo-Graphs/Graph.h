@@ -37,6 +37,6 @@ public:
 	}
 	void createEdgeHeap();
 	virtual void fillEdgeHeap() = 0;
-	virtual void kruskalSolver() = 0;
+	virtual void kruskalSolver();
 };
 

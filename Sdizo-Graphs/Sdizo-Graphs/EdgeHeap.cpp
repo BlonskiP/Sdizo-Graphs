@@ -76,7 +76,10 @@ void EdgeHeap::heapify(int i)
 		smallest = r;
 	if (smallest != i)
 	{
-		swap(heap[i], heap[smallest]);
+		
+		Edge temp =heap[i];
+		heap[i] = heap[smallest];
+		heap[smallest] = temp;
 		heapify(smallest);
 	}
 }

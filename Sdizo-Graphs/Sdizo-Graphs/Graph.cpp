@@ -37,3 +37,12 @@ void Graph::createEdgeHeap()
 {
 	heap = new EdgeHeap(E);
 }
+
+void Graph::kruskalSolver()
+{
+	
+		kruskal = new KruskalSolver(V, E, heap);
+		kruskal->solve();
+		kruskal->printTree();
+	
+}

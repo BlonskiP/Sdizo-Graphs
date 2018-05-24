@@ -37,7 +37,10 @@ void IncidenceMatrix::addVertex(int i)
 void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
 	list[end][number].cost = -cost;
 	list[start][number].cost = cost;
-	
+	list[start][number].from = start;
+	list[start][number].to = end;
+	list[end][number].from = start;
+	list[end][number].to = end;
 }
 
 void IncidenceMatrix::print()
@@ -74,8 +77,11 @@ void IncidenceMatrix::changeRep()
 
 void IncidenceMatrix::fillEdgeHeap()
 {
+	Edge *tmp;
+	for (int i = 0; i < V; i++)
+	{
+		for (int k = 0; k < E; k++)
+			if (list[i][k].cost > 0) heap->push(list[i][k]);
+	}
 }
 
-void IncidenceMatrix::kruskalSolver()
-{
-}

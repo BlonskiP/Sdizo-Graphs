@@ -103,9 +103,3 @@ void AdjacencyList::fillEdgeHeap()
 
 }
 
-void AdjacencyList::kruskalSolver()
-{
-	kruskal = new KruskalSolver( V,E, heap);
-	kruskal->solve();
-//	kruskal->kruskalPrint();
-}

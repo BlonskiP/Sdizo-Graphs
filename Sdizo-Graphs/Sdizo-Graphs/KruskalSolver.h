@@ -1,6 +1,17 @@
 #pragma once
 #include "EdgeHeap.h"
-
+struct Node //element zbioru
+{
+	int up, rank;
+};
+struct NodeFamily
+{	public:
+	Node *nodePointer;
+	NodeFamily(int x); // tworzy strukture ze zbiorami konstruktor
+	void makeSet(int x); // tworzy  zbior
+	int findSet(int x);
+	void unionSet(Edge x);
+};
 class KruskalSolver
 {
 public:
@@ -8,10 +19,12 @@ public:
 	unsigned short int edges;
 	EdgeHeap * startingHeap;
 	EdgeHeap * endHeap;
+	NodeFamily * nodes;
 	Edge *tmp;
 	KruskalSolver(int V, int E, EdgeHeap *start);
 	~KruskalSolver();
 	void solve();
+	void printTree();
 	
 };
 

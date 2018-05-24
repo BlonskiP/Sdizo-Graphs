@@ -11,6 +11,6 @@ public:
 	void print(); //prints
 	void changeRep(); //changes representaion
 	void fillEdgeHeap();
-	void kruskalSolver();
+//	void kruskalSolver();
 };
 
