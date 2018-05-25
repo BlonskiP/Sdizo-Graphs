@@ -4,12 +4,14 @@
 #define GRAPH_H
 #include "KruskalSolver.h"
 #include "EdgeHeap.h"
+#include "PrimSolver.h"
 #include <fstream>
 #include <iostream>
 #include <iomanip>
 
 
 class KruskalSolver;
+class PrimSolver;
 class Graph
 {
 public:
@@ -18,6 +20,7 @@ public:
 	EdgeHeap * heap;
 	Edge *p, *r; // Pointery pomocnicze
 	KruskalSolver *kruskal;
+	PrimSolver *prim;
 	int V = 0;
 	int E = 0;
 	Graph();
@@ -38,5 +41,6 @@ public:
 	virtual void fillEdgeHeap() = 0;
 	void kruskalSolver();
 	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
+	void primSolver();
 };
 #endif

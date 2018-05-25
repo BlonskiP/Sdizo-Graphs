@@ -18,6 +18,7 @@ AdjacencyList::AdjacencyList()
 			file >> end;
 			file >> weight;
 			addEdge(start, end, weight, i);
+			addEdge(end, start, weight, i);
 		
 	}
 	file.close();

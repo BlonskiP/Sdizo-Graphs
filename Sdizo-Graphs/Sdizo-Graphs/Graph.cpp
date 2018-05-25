@@ -48,3 +48,10 @@ void Graph::kruskalSolver()
 	
 }
 
+void Graph::primSolver()
+{
+	prim = new PrimSolver(V, E, this);
+	prim->solve();
+	prim->printTree();
+}
+
