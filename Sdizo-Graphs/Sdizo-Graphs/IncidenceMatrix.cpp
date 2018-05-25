@@ -35,6 +35,7 @@ void IncidenceMatrix::addVertex(int i)
 }
 
 void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
+	
 	list[end][number].cost = cost;
 	list[start][number].cost = cost;
 	list[start][number].number = number;
