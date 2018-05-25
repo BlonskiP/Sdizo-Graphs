@@ -18,8 +18,10 @@ void EdgeHeap::push(Edge edge)
 {
 	if (heapSize == maxSize)
 	{
-		std::cout << "ERROR TO MANY EDGES\n";
-		return;
+		EdgeHeap *tmp = new EdgeHeap(maxSize + 1);
+		for (int i = 0; i < maxSize; i++)
+			tmp->heap[i] = heap[i];
+		maxSize++;
 	}
 	else
 	{
@@ -36,6 +38,12 @@ void EdgeHeap::push(Edge edge)
 			i = parent(i);
 		}
 	}
+}
+
+void EdgeHeap::pushHeap(EdgeHeap *edges)
+{
+	for (int i = 0; i < edges->heapSize; i++)
+		push(edges->pop());
 }
 
 Edge EdgeHeap::pop()

@@ -2,8 +2,7 @@
 #include "Graph.h"
 #include <iostream>
 
-class AdjacencyList :
-	public Graph
+class AdjacencyList : public Graph
 {
 public:
 	

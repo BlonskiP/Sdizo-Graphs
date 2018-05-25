@@ -1,5 +1,6 @@
 #pragma once
 #include "EdgeHeap.h"
+#include "Graph.h"
 struct Node //element zbioru
 {
 	int up, rank;
@@ -21,7 +22,7 @@ public:
 	EdgeHeap * endHeap;
 	NodeFamily * nodes;
 	Edge *tmp;
-	KruskalSolver(int V, int E, EdgeHeap *start);
+	KruskalSolver(int V, int E, Graph *start);
 	~KruskalSolver();
 	void solve();
 	void printTree();

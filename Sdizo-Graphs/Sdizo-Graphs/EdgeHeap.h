@@ -26,6 +26,7 @@ public:
 	EdgeHeap(int edges);
 	~EdgeHeap();
 	void push(Edge edge);
+	void pushHeap(EdgeHeap *edges);
 	Edge pop();
 	int parent(int i) { return (i - 1) / 2;}
 	int left(int i) { return (2 * i + 1); }

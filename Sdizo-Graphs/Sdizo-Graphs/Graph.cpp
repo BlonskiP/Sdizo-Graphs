@@ -46,3 +46,4 @@ void Graph::kruskalSolver()
 		kruskal->printTree();
 	
 }
+

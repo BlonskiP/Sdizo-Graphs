@@ -11,6 +11,7 @@ public:
 	void print(); //prints
 	void changeRep(); //changes representaion
 	void fillEdgeHeap();
+	EdgeHeap * getVerticeEdges(int verticle);
 //	void kruskalSolver();
 };
 

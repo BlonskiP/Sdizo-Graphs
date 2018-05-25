@@ -21,12 +21,6 @@ public:
 	virtual void addVertex(int i) = 0;
 	virtual void print() = 0; //prints
 	virtual void changeRep() = 0; //changes representaion
-	int GetV() {
-		return V;
-	};
-	int GetE() {
-		return E;
-	}
 	bool loadFromFile();
 	void setSize(int size) {
 		V = size;
@@ -37,6 +31,7 @@ public:
 	}
 	void createEdgeHeap();
 	virtual void fillEdgeHeap() = 0;
-	virtual void kruskalSolver();
+	void kruskalSolver();
+	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
 };
 

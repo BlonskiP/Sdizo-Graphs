@@ -2,11 +2,13 @@
 #include "KruskalSolver.h"
 
 
-KruskalSolver::KruskalSolver(int V, int E, EdgeHeap *start)
+KruskalSolver::KruskalSolver(int V, int E, Graph *start)
 {
 	maxEdges = V-1;
 	edges = E;
-	startingHeap = start;
+	EdgeHeap *startingHeap = new EdgeHeap(E);
+	for (int i = 0; i < V; i++)
+		startingHeap->pushHeap(start->getVerticeEdges(i));
 	endHeap = new EdgeHeap(maxEdges);
 	nodes = new NodeFamily(V);
 	for (int i = 0; i < V; i++)

@@ -37,8 +37,10 @@ void IncidenceMatrix::addVertex(int i)
 void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
 	list[end][number].cost = -cost;
 	list[start][number].cost = cost;
+	list[start][number].number = number;
 	list[start][number].from = start;
 	list[start][number].to = end;
+	list[end][number].number = number;
 	list[end][number].from = start;
 	list[end][number].to = end;
 }
@@ -83,5 +85,18 @@ void IncidenceMatrix::fillEdgeHeap()
 		for (int k = 0; k < E; k++)
 			if (list[i][k].cost > 0) heap->push(list[i][k]);
 	}
+}
+
+EdgeHeap * IncidenceMatrix::getVerticeEdges(int verticle)
+{
+	EdgeHeap *tmp = new EdgeHeap(3);
+	int n = 0;
+	for(int i=0;i<E;i++)
+		if (list[verticle][i].cost > 0) {
+			n++;
+			tmp->push(list[verticle][i]);
+		}
+	tmp->printHeap();
+	return tmp;
 }
 
