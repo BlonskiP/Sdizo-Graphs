@@ -1,10 +1,15 @@
 #pragma once
+
+#ifndef GRAPH_H
+#define GRAPH_H
+#include "KruskalSolver.h"
+#include "EdgeHeap.h"
 #include <fstream>
 #include <iostream>
 #include <iomanip>
-#include "EdgeHeap.h"
-#include "KruskalSolver.h"
 
+
+class KruskalSolver;
 class Graph
 {
 public:
@@ -34,4 +39,4 @@ public:
 	void kruskalSolver();
 	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
 };
-
+#endif

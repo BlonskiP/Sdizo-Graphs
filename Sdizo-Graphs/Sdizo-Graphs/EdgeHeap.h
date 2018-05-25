@@ -35,5 +35,7 @@ public:
 	void heapify(int i);
 	void printHeap();
 	bool heapCheck();
+	void printEdges();
+	void extendHeap();
 };
 

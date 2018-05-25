@@ -41,7 +41,8 @@ void Graph::createEdgeHeap()
 void Graph::kruskalSolver()
 {
 	
-		kruskal = new KruskalSolver(V, E, heap);
+		kruskal = new KruskalSolver(V, E, this);
+		kruskal->startingHeap->printEdges();
 		kruskal->solve();
 		kruskal->printTree();
 	

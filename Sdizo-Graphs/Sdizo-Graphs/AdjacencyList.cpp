@@ -103,3 +103,20 @@ void AdjacencyList::fillEdgeHeap()
 
 }
 
+EdgeHeap * AdjacencyList::getVerticeEdges(int verticle)
+{
+	EdgeHeap* tmpHeap = new EdgeHeap(3);
+	Edge *tmp;
+	
+		tmp = list[verticle];
+		while (tmp != nullptr)
+		{
+			tmpHeap->push(*tmp);
+
+			tmp = tmp->next;
+		}
+
+	
+	return tmpHeap;
+}
+

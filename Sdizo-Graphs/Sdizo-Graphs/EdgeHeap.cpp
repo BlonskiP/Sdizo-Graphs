@@ -18,13 +18,8 @@ void EdgeHeap::push(Edge edge)
 {
 	if (heapSize == maxSize)
 	{
-		EdgeHeap *tmp = new EdgeHeap(maxSize + 1);
-		for (int i = 0; i < maxSize; i++)
-			tmp->heap[i] = heap[i];
-		maxSize++;
+		extendHeap();
 	}
-	else
-	{
 		heapSize++;
 		int i = heapSize - 1;
 		heap[i] = edge;
@@ -37,13 +32,17 @@ void EdgeHeap::push(Edge edge)
 			heap[i] = temp;
 			i = parent(i);
 		}
-	}
+	
 }
 
 void EdgeHeap::pushHeap(EdgeHeap *edges)
 {
-	for (int i = 0; i < edges->heapSize; i++)
-		push(edges->pop());
+	int size = edges->heapSize;
+	Edge *tmp = nullptr;
+	for (int i = 0; i < size; i++) {
+		tmp = &edges->pop();
+		push(*tmp);
+	}
 }
 
 Edge EdgeHeap::pop()
@@ -114,4 +113,19 @@ bool EdgeHeap::heapCheck()
 		else return false;
 	}
 		return true;
+}
+
+void EdgeHeap::printEdges()
+{
+	for (int i = 0; i < maxSize; i++)
+		std::cout << heap[i].from << " to " << heap[i].to << " cost " << heap[i].cost << std::endl;
+}
+
+void EdgeHeap::extendHeap()
+{
+	Edge *tmp = new Edge[maxSize + 1];
+	for (int i = 0; i < maxSize; i++)
+		tmp[i] = heap[i];
+	heap = tmp;
+	maxSize++;
 }

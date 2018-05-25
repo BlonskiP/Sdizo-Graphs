@@ -1,6 +1,9 @@
+#ifndef KRUSKAL_H
 #pragma once
-#include "EdgeHeap.h"
+#define KRUSKAL_H
 #include "Graph.h"
+#include "EdgeHeap.h"
+//extern class Graph;
 struct Node //element zbioru
 {
 	int up, rank;
@@ -13,6 +16,7 @@ struct NodeFamily
 	int findSet(int x);
 	void unionSet(Edge x);
 };
+class Graph;
 class KruskalSolver
 {
 public:
@@ -28,4 +32,4 @@ public:
 	void printTree();
 	
 };
-
+#endif

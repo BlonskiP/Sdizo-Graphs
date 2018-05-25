@@ -93,10 +93,10 @@ EdgeHeap * IncidenceMatrix::getVerticeEdges(int verticle)
 	int n = 0;
 	for(int i=0;i<E;i++)
 		if (list[verticle][i].cost > 0) {
-			n++;
+			
 			tmp->push(list[verticle][i]);
 		}
-	tmp->printHeap();
+	//tmp->printHeap();
 	return tmp;
 }
 
