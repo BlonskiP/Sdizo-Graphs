@@ -39,6 +39,7 @@ public:
 	void extendHeap();
 };
 class EdgeList {
+public:
 	Edge *head;
 	EdgeList();
 	int size;

@@ -9,10 +9,11 @@
 #include <iostream>
 #include <iomanip>
 #include "DijkstraSolver.h"
-
+#include "Bellman.h"
 class DijkstraSolver;
 class KruskalSolver;
 class PrimSolver;
+class Bellman;
 class Graph
 {
 public:
@@ -22,10 +23,13 @@ public:
 	Edge *p, *r; // Pointery pomocnicze
 	KruskalSolver *kruskal;
 	PrimSolver *prim;
+	DijkstraSolver *dij;
+	Bellman *bellman;
 	int V = 0;
 	int E = 0;
 	Graph();
 	virtual ~Graph();
+	bool directed;
 	virtual void addEdge(int start, int end, int cost, int number) = 0;
 	virtual void addVertex(int i) = 0;
 	virtual void print() = 0; //prints
@@ -43,5 +47,9 @@ public:
 	void kruskalSolver();
 	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
 	void primSolver();
+	void dijSolver();
+	void bellSolver();
+	virtual void changeToDirected() = 0;
+	virtual void changeToNotDirected() = 0;
 };
 #endif

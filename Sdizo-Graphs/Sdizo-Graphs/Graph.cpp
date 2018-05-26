@@ -55,3 +55,17 @@ void Graph::primSolver()
 	prim->printTree();
 }
 
+void Graph::dijSolver()
+{
+	dij = new DijkstraSolver(V, E, this);
+	dij->solve(0);
+	dij->print();
+}
+
+void Graph::bellSolver()
+{
+	bellman = new Bellman(V, E, this);
+	bellman->solve(0);
+	bellman->print();
+}
+

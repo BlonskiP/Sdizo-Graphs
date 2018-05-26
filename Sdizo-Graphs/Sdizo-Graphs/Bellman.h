@@ -1,23 +1,21 @@
 #pragma once
-#ifndef Dijkstra_H
-#define Dijkstra_H
+#ifndef BELLMAN_H
+#define BELLMAN_H
 #include "Graph.h"
 #include "EdgeHeap.h"
-const int MAXINT = 2147483647;
 class Graph;
-class DijkstraSolver
+class Bellman
 {
 public:
-	DijkstraSolver(int V, int E, Graph *graf);
-	~DijkstraSolver();
+	Bellman(int V, int E, Graph *graf);
+	~Bellman();
 	int *verticlesCost;
-	bool *verticles;
 	int *preVerticle;
 	Graph *G;
-	
+	EdgeHeap *Queue;
 	void solve(int startVerticle);
 	void print();
-
+	
 };
 
 #endif

@@ -4,24 +4,11 @@
 
 
 
-AdjacencyList::AdjacencyList()
+AdjacencyList::AdjacencyList(bool dir)
 {
-	int start, end, weight;
-	loadFromFile();
-	createEdgeHeap();
-	list = new Edge *[V];
-	for (int i = 0; i < V; i++) addVertex(i);
-	for (int i = 0; i < E; i++)
-	{
-		
-			file >> start;
-			file >> end;
-			file >> weight;
-			addEdge(start, end, weight, i);
-			addEdge(end, start, weight, i);
-		
-	}
-	file.close();
+	
+	if (directed = true)changeToDirected();
+	else changeToNotDirected();
 }
 
 AdjacencyList::AdjacencyList(int size, int edge)
@@ -119,5 +106,44 @@ EdgeHeap * AdjacencyList::getVerticeEdges(int verticle)
 
 	
 	return tmpHeap;
+}
+
+void AdjacencyList::changeToDirected()
+{
+	int start, end, weight;
+	loadFromFile();
+	createEdgeHeap();
+	list = new Edge *[V];
+	for (int i = 0; i < V; i++) addVertex(i);
+	for (int i = 0; i < E; i++)
+	{
+
+		file >> start;
+		file >> end;
+		file >> weight;
+		addEdge(start, end, weight, i);
+
+	}
+	file.close();
+}
+
+void AdjacencyList::changeToNotDirected()
+{
+	int start, end, weight;
+	loadFromFile();
+	createEdgeHeap();
+	list = new Edge *[V];
+	for (int i = 0; i < V; i++) addVertex(i);
+	for (int i = 0; i < E; i++)
+	{
+
+		file >> start;
+		file >> end;
+		file >> weight;
+		addEdge(start, end, weight, i);
+		addEdge(end, start, weight, i);
+
+	}
+	file.close();
 }
 

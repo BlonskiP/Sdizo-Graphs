@@ -20,12 +20,13 @@ void PrimSolver::solve()
 {
 	EdgeHeap *tmpHeap;
 	int v = 0;
+	int heapSize;
 	visited[v] = true;
 	for (int i = 0; i < maxEdges; i++)
 	{
 		
 		tmpHeap = graf->getVerticeEdges(v);
-		int heapSize = tmpHeap->heapSize;
+		heapSize = tmpHeap->heapSize;
 		for (int k = 0; k < heapSize; k++)
 		{
 			tmp = &tmpHeap->pop();

@@ -6,7 +6,7 @@ class AdjacencyList : public Graph
 {
 public:
 	
-	AdjacencyList();
+	AdjacencyList(bool dir);
 	AdjacencyList(int size, int edge);
 	~AdjacencyList();
 	void addEdge(int start, int end, int cost, int number);
@@ -16,6 +16,8 @@ public:
 	void fillEdgeHeap();
 	//void kruskalSolver();
 	EdgeHeap * getVerticeEdges(int verticle);
+	void changeToDirected();
+	void changeToNotDirected();
 	
 };
 
