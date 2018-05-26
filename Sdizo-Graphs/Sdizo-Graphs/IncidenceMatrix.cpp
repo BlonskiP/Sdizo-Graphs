@@ -80,7 +80,7 @@ void IncidenceMatrix::changeRep()
 
 void IncidenceMatrix::fillEdgeHeap()
 {
-	Edge *tmp;
+	//Edge *tmp;
 	for (int i = 0; i < V; i++)
 	{
 		for (int k = 0; k < E; k++)

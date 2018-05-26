@@ -8,8 +8,9 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include "DijkstraSolver.h"
 
-
+class DijkstraSolver;
 class KruskalSolver;
 class PrimSolver;
 class Graph

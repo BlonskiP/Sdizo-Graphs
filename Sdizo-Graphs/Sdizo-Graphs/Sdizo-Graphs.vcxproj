@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AdjacencyList.h" />
+    <ClInclude Include="DijkstraSolver.h" />
     <ClInclude Include="EdgeHeap.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IncidenceMatrix.h" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdjacencyList.cpp" />
+    <ClCompile Include="DijkstraSolver.cpp" />
     <ClCompile Include="EdgeHeap.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="IncidenceMatrix.cpp" />

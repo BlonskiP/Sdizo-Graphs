@@ -129,3 +129,33 @@ void EdgeHeap::extendHeap()
 	heap = tmp;
 	maxSize++;
 }
+
+void EdgeList::addEdge(Edge * edge)
+{
+
+	if (head == nullptr && size == 0)
+	{
+		head = edge;
+	}
+	else
+		last->next = edge;
+	size++;
+
+}
+Edge * EdgeList::getEdge(int index)
+{
+	Edge *tmp;
+	tmp = head;
+	int i = 1;
+	while (i <= index)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return tmp;
+}
+EdgeList::EdgeList() {
+	head = nullptr;
+	last = head;
+	size = 0;
+}
