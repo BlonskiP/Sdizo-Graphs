@@ -52,6 +52,6 @@ public:
 	void bellSolver();
 	virtual void changeToDirected() = 0;
 	virtual void changeToNotDirected() = 0;
-	void generate();
+	void generate(int W, int E);
 };
 #endif

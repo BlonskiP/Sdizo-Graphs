@@ -54,6 +54,7 @@ void DijkstraSolver::solve(int startVerticle)
 
 void DijkstraSolver::print()
 {
+	std::cout << "ALGORYTM DIJKSTRY \n";
 	std::cout << "W: ";
 	for (int i = 0; i < G->V; i++)
 		std::cout << std::setw(3) << i;
@@ -66,7 +67,5 @@ void DijkstraSolver::print()
 	for (int i = 0; i < G->V; i++)
 		std::cout << std::setw(3) << preVerticle[i];
 	std::cout << std::endl;
-	std::cout << "BOOL: ";
-	for (int i = 0; i < G->V; i++)
-		std::cout << std::setw(3) << verticles[i];
+	
 }

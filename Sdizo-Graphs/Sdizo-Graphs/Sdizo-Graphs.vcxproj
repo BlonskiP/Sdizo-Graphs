@@ -23,6 +23,7 @@
     <ProjectGuid>{225AD013-1E31-4EB0-ADDB-92F7E61DAA55}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SdizoGraphs</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

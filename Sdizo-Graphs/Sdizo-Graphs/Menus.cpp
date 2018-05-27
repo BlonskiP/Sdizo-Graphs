@@ -3,6 +3,7 @@
 
 void MainMenu::start()
 {
+	clear();
 	cout << "Menu g³owne \n" << std::endl;
 	cout << "1. Wczytaj Graf z Pliku" << std::endl;
 	cout << "2. Generuj Graf Algorytmem" << std::endl;
@@ -11,22 +12,23 @@ void MainMenu::start()
 	cout << "5. Wykonaj Algorytmy szukania drogi" << std::endl;
 	cout << "6. Wykonaj obliczenia" << std::endl;
 	cout << "7. Zmieñ ilosc wierzcholkow i gestosc" << std::endl;
-	cout << " W: " << W << " G: " << G << std::endl;
+	cout << " W: " << graph->V << " E: " << graph->E << std::endl;
+	cout << " Gestosc: " << (double)graph->V/(double)graph->E<< std::endl;
 	GivenChoice = choice();
 	switch (GivenChoice)
 	{
 	case 1: {
-		graph->loadFromFile();
-		break; }
+		graph->loadFromFile(); start();
+		break;  }
 	case 2: {
-		graph->generate();  break; }
-	case 3: {graph->print(); break; }
-	case 4: {break; }
-	case 5: {break; }
-	case 6: {break; }
+		graph->generate(W,E);  break; }
+	case 3: {graph->print(); system("Pause");  break; }
+	case 4: {tree(); system("Pause");  break; }
+	case 5: {path(); system("Pause");  break; }
+	case 6: {countAll(); system("Pause"); break; }
 	case 7: {break; }
 	default:
-		start();
 		break;
 	}
+	if(end==false)start();
 }

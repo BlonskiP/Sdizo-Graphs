@@ -9,7 +9,7 @@ AdjacencyList::AdjacencyList(bool dir)
 	loadFromFile();
 	createEdgeHeap();
 	directed = dir;
-	if (directed = true)changeToDirected();
+	if (directed == true)changeToDirected();
 	else changeToNotDirected();
 }
 

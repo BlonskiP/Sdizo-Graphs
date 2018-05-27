@@ -84,6 +84,7 @@ void Bellman::solve(int startVerticle)
 
 void Bellman::print()
 {
+	std::cout << "ALGORYTM BELLMANA-FORDA \n";
 	std::cout << "W: ";
 	for (int i = 0; i < G->V; i++)
 		std::cout << std::setw(3) << i;
