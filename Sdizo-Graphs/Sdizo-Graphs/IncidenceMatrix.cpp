@@ -123,3 +123,12 @@ void IncidenceMatrix::changeToNotDirected()
 	}
 }
 
+void IncidenceMatrix::ABS()
+{
+	for (int k = 0; k < V; k++)
+		for (int i = 0; i < E; i++)
+			list[k][i].cost = abs(list[k][i].cost);
+
+		
+}
+

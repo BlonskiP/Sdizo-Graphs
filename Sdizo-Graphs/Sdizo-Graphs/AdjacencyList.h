@@ -18,7 +18,7 @@ public:
 	EdgeHeap * getVerticeEdges(int verticle);
 	void changeToDirected();
 	void changeToNotDirected();
-	
+	void ABS();
 };
 
 

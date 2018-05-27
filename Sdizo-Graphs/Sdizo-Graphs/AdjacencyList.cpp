@@ -155,3 +155,8 @@ void AdjacencyList::changeToNotDirected()
 	
 }
 
+void AdjacencyList::ABS()
+{
+
+}
+

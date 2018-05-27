@@ -57,6 +57,7 @@ public:
 	bool checkBools(bool *ar);
 	void changeDir();
 	void printArray();
+	virtual void ABS() = 0;
 };
 
 #endif

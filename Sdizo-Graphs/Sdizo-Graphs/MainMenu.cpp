@@ -52,6 +52,7 @@ void MainMenu::tree() {
 }
 void MainMenu::path()
 {
+	
 	graph->dij = new DijkstraSolver(graph->V, graph->E, graph);
 	graph->bellman = new Bellman(graph->V, graph->E, graph);
 	graph->directed =true;

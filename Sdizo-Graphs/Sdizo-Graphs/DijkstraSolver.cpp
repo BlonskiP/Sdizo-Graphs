@@ -30,10 +30,10 @@ void DijkstraSolver::solve(int startVerticle)
 	verticles[v] = true; //odwiedzilismy pierwszy wierzcho³ek
 	verticlesCost[v] = 0;
 	int heapSize = 0;
-
+	int pathCost;
+	int toPath;
 	Edge *tmp;
-	
-	
+	EdgeHeap *tmpHeap2 = new EdgeHeap(1);
 
 	for (int i = 0; i < G->V-1; i++)
 	{
@@ -42,15 +42,20 @@ void DijkstraSolver::solve(int startVerticle)
 		for (int k = 0; k < heapSize; k++)
 		{
 			tmp = &tmpHeap->heap[k];
-			if (verticlesCost[tmp->to] > (tmp->cost + verticlesCost[tmp->from])) {
+		//	if (tmp->cost < 0)tmp->cost = 0;
+			pathCost = tmp->cost + verticlesCost[tmp->from];
+			toPath = verticlesCost[tmp->to];
+			if (toPath > (pathCost)) {
 				if (!verticles[tmp->to]){
-					verticlesCost[tmp->to] = tmp->cost + verticlesCost[tmp->from];
+					verticlesCost[tmp->to] = pathCost;
 					preVerticle[tmp->to] = tmp->from;
 				}
 			}
 
 		}
+
 		tmp = &tmpHeap->pop();
+		
 		v = tmp->to;
 		verticles[v] = true;
 	}
