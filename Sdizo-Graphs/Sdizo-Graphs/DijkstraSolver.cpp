@@ -33,31 +33,31 @@ void DijkstraSolver::solve(int startVerticle)
 	int pathCost;
 	int toPath;
 	Edge *tmp;
-	EdgeHeap *tmpHeap2 = new EdgeHeap(1);
 
-	for (int i = 0; i < G->V-1; i++)
+	for (int i = 0; i < G->V - 1; i++)
 	{
-		tmpHeap->pushHeap(G->getVerticeEdges(v));
-		heapSize = tmpHeap->heapSize;
-		for (int k = 0; k < heapSize; k++)
+		tmpHeap->pushHeap(G->getVerticeEdges(i)); // Wez wszystkie krawedzie wierzcholka i
+		heapSize = tmpHeap->heapSize; //heapSize to ilosc wierzcholkow
+		for (int k = 0; k < heapSize; k++) //Sprawdzaj krawedzie
 		{
-			tmp = &tmpHeap->heap[k];
-		//	if (tmp->cost < 0)tmp->cost = 0;
-			pathCost = tmp->cost + verticlesCost[tmp->from];
+			tmp = &tmpHeap->pop();
+			pathCost = verticlesCost[tmp->from] + tmp->cost;
 			toPath = verticlesCost[tmp->to];
-			if (toPath > (pathCost)) {
-				if (!verticles[tmp->to]){
-					verticlesCost[tmp->to] = pathCost;
-					preVerticle[tmp->to] = tmp->from;
-				}
+			if (pathCost < toPath) //jezeli koszt mniejszy to
+			{
+				verticlesCost[tmp->to] = pathCost;
+				preVerticle[tmp->to] = tmp->from;
 			}
 
 		}
+		int v1 = findCheap();
+		if (!verticles[v1])
+		{
+			verticles[v1] = true;
+			v = v1;
+		}
 
-		tmp = &tmpHeap->pop();
-		
-		v = tmp->to;
-		verticles[v] = true;
+
 	}
 	
 }
@@ -83,4 +83,19 @@ void DijkstraSolver::print()
 		std::cout << std::setw(3) <<verticles[i];
 	std::cout << std::endl;
 	std::cout << std::endl;
+}
+
+int DijkstraSolver::findCheap()
+{
+	int numer;
+	int cheap = MAXINT;
+	for (int i = 0; i <G->V; i++)
+	{
+		if (verticlesCost[i] < cheap)
+		{
+			cheap = verticlesCost[i];
+			numer = i;
+		}
+	}
+	return numer;
 }

@@ -18,7 +18,7 @@ public:
 	EdgeHeap *tmpHeap;
 	void solve(int startVerticle);
 	void print();
-
+	int findCheap();
 };
 
 #endif
