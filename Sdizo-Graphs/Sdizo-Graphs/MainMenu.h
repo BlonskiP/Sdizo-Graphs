@@ -18,6 +18,9 @@ public:
 	enum structureGraph {
 		AdjList, InciMatrix
 	}structure;
+	enum mesType {
+		treeM,pathM
+	}measureType;
 	Graph *graph;
 	int GivenChoice;
 	int* measureTab;
@@ -41,6 +44,7 @@ public:
 	void prim();
 	void dij();
 	void bell();
+	void reloadStructure();
 	
 };
 

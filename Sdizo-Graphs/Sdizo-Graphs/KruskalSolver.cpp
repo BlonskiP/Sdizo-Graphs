@@ -17,7 +17,10 @@ KruskalSolver::KruskalSolver(int V, int E, Graph *start)
 }
 KruskalSolver::~KruskalSolver()
 {
-
+	std::cout << "KRUSKAL DELETE TEST";
+	delete startingHeap;
+	delete endHeap;
+	delete nodes;
 }
 
 void KruskalSolver::solve()

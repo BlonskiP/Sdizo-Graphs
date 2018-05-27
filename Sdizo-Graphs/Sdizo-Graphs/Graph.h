@@ -56,6 +56,7 @@ public:
 	void generate(int W, int E);
 	bool checkBools(bool *ar);
 	void changeDir();
+	void printArray();
 };
 
 #endif

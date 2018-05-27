@@ -12,7 +12,7 @@ Graph::Graph()
 
 Graph::~Graph()
 {
-
+	
 }
 
 bool Graph::loadFromFile()
@@ -59,44 +59,51 @@ void Graph::createEdgeHeap()
 
 void Graph::kruskalSolver()
 {
-	  //  changeToNotDirected();
-	    delete kruskal;
+	 
+	   
 		kruskal = new KruskalSolver(V, E, this);
-		kruskal->startingHeap->printEdges();
 		kruskal->solve();
-		//kruskal->printTree();
+		
 	
 }
 
 void Graph::primSolver()
 {
-	//changeToNotDirected();
-	delete prim;
+	
 	prim = new PrimSolver(V, E, this);
 	prim->solve();
-	//prim->printTree();
+	
+
 }
 
 void Graph::dijSolver()
 {
-	//changeToDirected();
+	
+	
 	dij = new DijkstraSolver(V, E, this);
 	dij->solve(0);
-	dij->print();
+	
 }
 
 void Graph::bellSolver()
 {
-	//changeToDirected();
+	
+	
 	bellman = new Bellman(V, E, this);
 	bellman->solve(0);
-	bellman->print();
+	
 }
 
 void Graph::generate(int W, int E)
 {
+	for (int i = 0; i < V; i++) delete[] list[i];
+	delete[] list;
+	
 	this->E = E;
 	this->V = W;
+	list = new Edge *[V];
+	for (int i = 0; i < V; i++)
+		addVertex(i);
 	delete[] graphArray;
 	int k = 2 + (3 * E);
 	graphArray = new int[2 + (3 * E)];
@@ -160,7 +167,7 @@ void Graph::generate(int W, int E)
 		
 	}
 	
-	
+	changeDir();
 }
 bool Graph::checkBools(bool * ar)
 {
@@ -177,6 +184,19 @@ void Graph::changeDir()
 	if (directed == true)changeToDirected();
 	else changeToNotDirected();
 
+}
+
+void Graph::printArray()
+{
+	int k = 2 + (3 * E);
+	std::cout << graphArray[0] << " " << graphArray[1] << std::endl;
+	for (int i = 2; i <k; i=i+3)
+	{
+		std::cout << graphArray[i] << " ";
+		std::cout << graphArray[i + 1]<< " ";
+		std::cout << graphArray[i + 2] << " "<< std::endl;
+
+	}
 }
 
 

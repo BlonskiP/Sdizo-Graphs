@@ -12,7 +12,8 @@ EdgeHeap::EdgeHeap(int edges)
 
 EdgeHeap::~EdgeHeap()
 {
-	
+	//std::cout << "KILL HEAP";
+	delete heap;
 }
 
 void EdgeHeap::push(Edge edge)
@@ -127,36 +128,8 @@ void EdgeHeap::extendHeap()
 	Edge *tmp = new Edge[maxSize + 1];
 	for (int i = 0; i < maxSize; i++)
 		tmp[i] = heap[i];
+	delete[] heap;
 	heap = tmp;
 	maxSize++;
 }
 
-void EdgeList::addEdge(Edge * edge)
-{
-
-	if (head == nullptr && size == 0)
-	{
-		head = edge;
-	}
-	else
-		last->next = edge;
-	size++;
-
-}
-Edge * EdgeList::getEdge(int index)
-{
-	Edge *tmp;
-	tmp = head;
-	int i = 1;
-	while (i <= index)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	return tmp;
-}
-EdgeList::EdgeList() {
-	head = nullptr;
-	last = head;
-	size = 0;
-}

@@ -58,4 +58,8 @@ void PrimSolver::printTree()
 
 PrimSolver::~PrimSolver()
 {
+	//std::cout << "DIE PRIM";
+	delete startingHeap;
+	delete endHeap;
+	delete[] visited;
 }

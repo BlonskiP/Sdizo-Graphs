@@ -12,12 +12,16 @@ DijkstraSolver::DijkstraSolver(int V, int E, Graph *graf)
 		preVerticle[i] = -1;
 		verticles[i] = false;
 	}
-
+	tmpHeap = new EdgeHeap(3);
 	
 }
 
 DijkstraSolver::~DijkstraSolver()
 {
+	delete[] verticlesCost;
+	delete[] verticles;
+	delete[] preVerticle;
+	delete tmpHeap;
 }
 
 void DijkstraSolver::solve(int startVerticle)
@@ -28,8 +32,8 @@ void DijkstraSolver::solve(int startVerticle)
 	int heapSize = 0;
 
 	Edge *tmp;
-	EdgeHeap *tmpHeap;
-	tmpHeap = new EdgeHeap(3);
+	
+	
 
 	for (int i = 0; i < G->V-1; i++)
 	{
@@ -50,6 +54,7 @@ void DijkstraSolver::solve(int startVerticle)
 		v = tmp->to;
 		verticles[v] = true;
 	}
+	
 }
 
 void DijkstraSolver::print()
@@ -67,5 +72,10 @@ void DijkstraSolver::print()
 	for (int i = 0; i < G->V; i++)
 		std::cout << std::setw(3) << preVerticle[i];
 	std::cout << std::endl;
-	
+	std::cout << std::endl;
+	std::cout << "G: ";
+	for (int i = 0; i < G->V; i++)
+		std::cout << std::setw(3) <<verticles[i];
+	std::cout << std::endl;
+	std::cout << std::endl;
 }

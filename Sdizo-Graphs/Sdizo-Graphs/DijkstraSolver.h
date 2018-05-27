@@ -3,6 +3,7 @@
 #define Dijkstra_H
 #include "Graph.h"
 #include "EdgeHeap.h"
+#include <math.h>
 const int MAXINT = 2147483647;
 class Graph;
 class DijkstraSolver
@@ -14,7 +15,7 @@ public:
 	bool *verticles;
 	int *preVerticle;
 	Graph *G;
-	
+	EdgeHeap *tmpHeap;
 	void solve(int startVerticle);
 	void print();
 

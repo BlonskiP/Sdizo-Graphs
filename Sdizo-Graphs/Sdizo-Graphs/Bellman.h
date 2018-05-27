@@ -12,7 +12,7 @@ public:
 	int *verticlesCost;
 	int *preVerticle;
 	Graph *G;
-	
+	EdgeHeap *tmpHeap;
 	void solve(int startVerticle);
 	void print();
 	

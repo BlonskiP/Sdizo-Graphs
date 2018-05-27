@@ -24,7 +24,7 @@ AdjacencyList::AdjacencyList(int size, int edge)
 
 AdjacencyList::~AdjacencyList()
 {
-
+	std::cout << "LIST IS DEAD";
 	for (int i = 0; i < V; i++)
 	{
 		p = list[i];
@@ -36,11 +36,9 @@ AdjacencyList::~AdjacencyList()
 		}
 	}
 	delete[] list;
-	delete[] heap;
+	delete heap;
 	delete kruskal;
-	delete prim;
-	delete dij;
-	delete bellman;
+	
 
 
 

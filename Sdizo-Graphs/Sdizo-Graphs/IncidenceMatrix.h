@@ -4,7 +4,7 @@ class IncidenceMatrix :
 	public Graph
 {
 public:
-	IncidenceMatrix();
+	IncidenceMatrix(bool dir);
 	~IncidenceMatrix();
 	void addVertex(int i);
 	void addEdge(int start, int end, int cost, int number);
@@ -12,6 +12,7 @@ public:
 	void changeRep(); //changes representaion
 	void fillEdgeHeap();
 	EdgeHeap * getVerticeEdges(int verticle);
-//	void kruskalSolver();
+	void changeToDirected();
+	void changeToNotDirected();
 };
 

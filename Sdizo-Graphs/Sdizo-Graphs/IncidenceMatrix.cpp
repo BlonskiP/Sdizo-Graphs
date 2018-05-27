@@ -2,23 +2,16 @@
 #include "IncidenceMatrix.h"
 
 
-IncidenceMatrix::IncidenceMatrix()
+IncidenceMatrix::IncidenceMatrix(bool dir)
 {
-	int start, end, weight;
 	loadFromFile();
 	createEdgeHeap();
 	list = new Edge *[V];
+	directed = dir;
 	for (int i = 0; i < V; i++)
 		addVertex(i);
-	for (int i = 0; i < E; i++)
-	{
-
-		file >> start;
-		file >> end;
-		file >> weight;
-		addEdge(start, end, weight,i);
-
-	}
+	if (directed == true)changeToDirected();
+	else changeToNotDirected();
 }
 
 
@@ -36,14 +29,10 @@ void IncidenceMatrix::addVertex(int i)
 
 void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
 	
-	list[end][number].cost = cost;
 	list[start][number].cost = cost;
 	list[start][number].number = number;
 	list[start][number].from = start;
 	list[start][number].to = end;
-	list[end][number].number = number;
-	list[end][number].from = end;
-	list[end][number].to = start;
 }
 
 void IncidenceMatrix::print()
@@ -99,5 +88,38 @@ EdgeHeap * IncidenceMatrix::getVerticeEdges(int verticle)
 		}
 	//tmp->printHeap();
 	return tmp;
+}
+
+void IncidenceMatrix::changeToDirected()
+{
+	int start, end, weight;
+	int n = 2;
+for (int i = 0; i < E; i++)
+	{
+
+		start = graphArray[n];
+		end = graphArray[n + 1];
+		weight = graphArray[n + 2];
+		addEdge(start, end, weight, i);
+		addEdge(end, start, -weight, i);
+		n = n + 3;
+	}
+}
+
+void IncidenceMatrix::changeToNotDirected()
+{
+	int start, end, weight;
+	int n = 2;
+	for (int i = 0; i < E; i++)
+	{
+
+		start = graphArray[n];
+		end = graphArray[n + 1];
+		weight = graphArray[n + 2];
+		addEdge(start, end, weight, i);
+		addEdge(end, start, weight, i);
+		n = n + 3;
+
+	}
 }
 

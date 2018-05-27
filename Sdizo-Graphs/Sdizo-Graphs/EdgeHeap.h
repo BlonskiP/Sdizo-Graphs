@@ -38,13 +38,3 @@ public:
 	void printEdges();
 	void extendHeap();
 };
-class EdgeList {
-public:
-	Edge *head;
-	EdgeList();
-	int size;
-	Edge *last;
-	void addEdge(Edge *edge);
-	Edge *getEdge(int index);
-	//More methods not needed?
-};

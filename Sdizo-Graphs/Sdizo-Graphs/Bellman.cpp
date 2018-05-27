@@ -13,13 +13,15 @@ Bellman::Bellman(int V, int E, Graph * graf)
 		verticlesCost[i] = MAXINT;
 		preVerticle[i] = -1;
 	}
-
+	tmpHeap = new EdgeHeap(1);
 }
 
 Bellman::~Bellman()
 {
+	
 	delete[] verticlesCost;
 	delete[] preVerticle;
+	delete tmpHeap;
 }
 
 void Bellman::solve(int startVerticle)
@@ -29,8 +31,8 @@ void Bellman::solve(int startVerticle)
 	int heapSize = 0;
 	bool changes = true;
 	Edge *tmp;
-	EdgeHeap *tmpHeap;
-	tmpHeap = new EdgeHeap(1);
+	
+	
 	while (changes)
 	{
 		changes = false;
