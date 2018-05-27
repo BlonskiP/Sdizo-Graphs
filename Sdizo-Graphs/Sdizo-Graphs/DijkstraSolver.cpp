@@ -36,7 +36,7 @@ void DijkstraSolver::solve(int startVerticle)
 
 	for (int i = 0; i < G->V - 1; i++)
 	{
-		tmpHeap->pushHeap(G->getVerticeEdges(i)); // Wez wszystkie krawedzie wierzcholka i
+		tmpHeap->pushHeap(G->getVerticeEdges(v)); // Wez wszystkie krawedzie wierzcholka i
 		heapSize = tmpHeap->heapSize; //heapSize to ilosc wierzcholkow
 		for (int k = 0; k < heapSize; k++) //Sprawdzaj krawedzie
 		{
@@ -50,13 +50,10 @@ void DijkstraSolver::solve(int startVerticle)
 			}
 
 		}
-		int v1 = findCheap();
-		if (!verticles[v1])
-		{
-			verticles[v1] = true;
-			v = v1;
-		}
-
+		int v1 = findCheap(); //Znajdz najtanszy wierzcholek ktorego nie bylo
+		
+			verticles[v1] = true; //teraz juz jest
+			v = v1; //sprawdz go
 
 	}
 	
@@ -91,6 +88,7 @@ int DijkstraSolver::findCheap()
 	int cheap = MAXINT;
 	for (int i = 0; i <G->V; i++)
 	{
+		if(verticles[i]==false)
 		if (verticlesCost[i] < cheap)
 		{
 			cheap = verticlesCost[i];
