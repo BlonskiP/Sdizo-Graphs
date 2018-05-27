@@ -17,6 +17,7 @@ KruskalSolver::KruskalSolver(int V, int E, Graph *start)
 }
 KruskalSolver::~KruskalSolver()
 {
+
 }
 
 void KruskalSolver::solve()
@@ -47,6 +48,11 @@ void KruskalSolver::printTree()
 	}
 	std::cout << " Koszt calkowity: " << treeCost << std::endl;
 
+}
+
+NodeFamily::~NodeFamily()
+{
+	delete[] nodePointer;
 }
 
 NodeFamily::NodeFamily(int x)

@@ -6,9 +6,9 @@
 MainMenu::MainMenu()
 {
 	structure = AdjList;
-	W = 5;
-	E = 5; // %
-	graph = new AdjacencyList(true);
+	W = 10;
+	E = 20; // %
+	graph = new AdjacencyList(false);
 }
 
 
@@ -31,7 +31,8 @@ int MainMenu::choice()
 }
 
 void MainMenu::tree() {
-	graph->changeToNotDirected();
+	
+	graph->changeToNotDirected();	
 	graph->kruskalSolver();
 	graph->kruskal->printTree();
 	graph->primSolver();
@@ -72,8 +73,8 @@ void MainMenu::count(structureGraph type, int verticles, int edges)
 	cout << (double)verticles / (double)edges << "||" << W << "||" << setw(5);
 	measure(&MainMenu::kruskal);
 	cout << measurement << "[us] ||" << setw(10);
-	measure(&MainMenu::prim);
-	cout << measurement << "[us] ||" << setw(10);
+	//measure(&MainMenu::prim);
+	//cout << measurement << "[us] ||" << setw(10);
 	measure(&MainMenu::dij);
 	cout << measurement << "[us] ||" << setw(10);
 	measure(&MainMenu::bell);
@@ -93,6 +94,10 @@ void MainMenu::measure(void(MainMenu::* function)(void))
 {
 	for (int i = 0; i < 100; i++)
 	{
+		delete[] measureTab;
+		
+		graph = new AdjacencyList(false);
+		measureTab = new int[100];
 		graph->generate(W,E);
 		measureTab[i] = timeCount(function);
 		
@@ -116,7 +121,7 @@ double MainMenu::timeCount(void(MainMenu::* function)(void))
 	long long int frequency, start, elapsed;
 	QueryPerformanceFrequency((LARGE_INTEGER *)&frequency);
 	start = read_QPC();
-	function;
+	(this->*function)();
 	elapsed = read_QPC() - start;
 	//	std::cout << "Time [s] = " << std::fixed << std::setprecision(3) << (float)elapsed / frequency << std::endl;
 	//	std::cout << "Time [ms] = " << std::setprecision(0) << (1000.0 * elapsed) / frequency << std::endl;

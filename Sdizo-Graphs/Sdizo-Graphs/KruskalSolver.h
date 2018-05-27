@@ -11,6 +11,7 @@ struct Node //element zbioru
 struct NodeFamily
 {	public:
 	Node *nodePointer;
+	~NodeFamily();
 	NodeFamily(int x); // tworzy strukture ze zbiorami konstruktor
 	void makeSet(int x); // tworzy  zbior
 	int findSet(int x);

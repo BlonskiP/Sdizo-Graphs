@@ -20,7 +20,7 @@ public:
 	}structure;
 	Graph *graph;
 	int GivenChoice;
-	int measureTab[100];
+	int* measureTab;
 	double measurement;
 	MainMenu();
 	~MainMenu();

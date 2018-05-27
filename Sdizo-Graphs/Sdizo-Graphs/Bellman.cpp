@@ -18,6 +18,8 @@ Bellman::Bellman(int V, int E, Graph * graf)
 
 Bellman::~Bellman()
 {
+	delete[] verticlesCost;
+	delete[] preVerticle;
 }
 
 void Bellman::solve(int startVerticle)

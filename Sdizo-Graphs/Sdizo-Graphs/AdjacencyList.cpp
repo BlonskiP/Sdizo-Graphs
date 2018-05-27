@@ -36,6 +36,11 @@ AdjacencyList::~AdjacencyList()
 		}
 	}
 	delete[] list;
+	delete[] heap;
+	delete kruskal;
+	delete prim;
+	delete dij;
+	delete bellman;
 
 
 

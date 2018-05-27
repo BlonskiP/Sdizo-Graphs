@@ -14,6 +14,7 @@ class DijkstraSolver;
 class KruskalSolver;
 class PrimSolver;
 class Bellman;
+
 class Graph
 {
 public:
@@ -53,5 +54,8 @@ public:
 	virtual void changeToDirected() = 0;
 	virtual void changeToNotDirected() = 0;
 	void generate(int W, int E);
+	bool checkBools(bool *ar);
+	void changeDir();
 };
+
 #endif

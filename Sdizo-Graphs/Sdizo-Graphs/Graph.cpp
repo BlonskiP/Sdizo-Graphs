@@ -6,11 +6,13 @@ Graph::Graph()
 {
 	V = 0;
 	E = 0;
+	graphArray = new int[1];
 }
 
 
 Graph::~Graph()
 {
+
 }
 
 bool Graph::loadFromFile()
@@ -58,8 +60,9 @@ void Graph::createEdgeHeap()
 void Graph::kruskalSolver()
 {
 	  //  changeToNotDirected();
+	    delete kruskal;
 		kruskal = new KruskalSolver(V, E, this);
-	//	kruskal->startingHeap->printEdges();
+		kruskal->startingHeap->printEdges();
 		kruskal->solve();
 		//kruskal->printTree();
 	
@@ -68,6 +71,7 @@ void Graph::kruskalSolver()
 void Graph::primSolver()
 {
 	//changeToNotDirected();
+	delete prim;
 	prim = new PrimSolver(V, E, this);
 	prim->solve();
 	//prim->printTree();
@@ -91,36 +95,89 @@ void Graph::bellSolver()
 
 void Graph::generate(int W, int E)
 {
+	this->E = E;
+	this->V = W;
 	delete[] graphArray;
+	int k = 2 + (3 * E);
 	graphArray = new int[2 + (3 * E)];
 	graphArray[0] = W;
 	graphArray[1] = E;
 	int n = 2;
-	int k = 2 + (3 * E);
-	for (int i = 0; i < W; i++)
+	bool *array = new bool[W];
+	for (int i = 0; i < V; i++)
 	{
-		k = k - n;
-		graphArray[n] = i;
-		graphArray[n + 1] = rand() % W;
-		graphArray[n + 2] = rand() % 10;
-		while(graphArray[n] == graphArray[n + 1])graphArray[n+1]=rand() % W;
-		graphArray[k+1] = rand() % 10; //Random koszt
-		graphArray[k] = i;
-		graphArray[k - 1] = rand() % W;
-		while (graphArray[k] == graphArray[k-1])graphArray[k - 1] = rand() % W;
-		n = n + 3;
+		array[i] = false;
+		
 	}
-	n = 2;
-	for (int i = 0; i < E; i++)
-	{
-		if (graphArray[n] < 0) { graphArray[n] = rand() % W;
-		while (graphArray[n] == graphArray[n + 1])graphArray[n] = rand() % W;
-		}
+	int x = 0;
+	int y = rand() % W;
+	
 
-		if (graphArray[n + 1] < 0) { graphArray[n + 1] = rand() % W;
-		while (graphArray[n] == graphArray[n + 1])graphArray[n+1] = rand() % W;
+	int i = 0;
+	array[x] = true;
+	while (checkBools(array)) 
+	{   if(!array[y])
+		if (x != y)
+		{
+			array[y] = true;
+			graphArray[n] = x;
+			graphArray[n + 1] = y;
+			graphArray[n + 2] = rand() % W;
+			n = n + 3;
+			i++;
+			x = y;
+			
 		}
-		n = n + 3;
+	y = rand() % W;
 	}
+
+	
+	for (;i<E; )
+	{
+		x = rand() % W;
+		y = rand() % W;
+		if (x != y)
+		{
+			graphArray[n] = x;
+			graphArray[n + 1] = y;
+			graphArray[n + 2] = rand() % (W-1);
+			n = n + 3;
+			i++;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	for (int i = 2; i <k; i++)
+	{
+		//std::cout << graphArray[i] << std::endl;
+		if (graphArray[i] > W - 1)graphArray[i] = rand() % 5;
+		
+	}
+	
+	
 }
+bool Graph::checkBools(bool * ar)
+{
+	for (int i = 0; i < V; i++)
+	{
+		if (ar[i] == false)
+			return true;
+	}
+	return false;
+}
+
+void Graph::changeDir()
+{
+	if (directed == true)changeToDirected();
+	else changeToNotDirected();
+
+}
+
+
 

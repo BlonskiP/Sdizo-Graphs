@@ -12,6 +12,7 @@ EdgeHeap::EdgeHeap(int edges)
 
 EdgeHeap::~EdgeHeap()
 {
+	
 }
 
 void EdgeHeap::push(Edge edge)
