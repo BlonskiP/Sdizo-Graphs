@@ -27,6 +27,7 @@ public:
 	Bellman *bellman;
 	int V = 0;
 	int E = 0;
+	int *graphArray;
 	Graph();
 	virtual ~Graph();
 	bool directed;
@@ -51,5 +52,6 @@ public:
 	void bellSolver();
 	virtual void changeToDirected() = 0;
 	virtual void changeToNotDirected() = 0;
+	void generate();
 };
 #endif

@@ -45,6 +45,9 @@
     <ClInclude Include="Bellman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,6 +78,12 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Bellman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,7 +6,9 @@
 
 AdjacencyList::AdjacencyList(bool dir)
 {
-	
+	loadFromFile();
+	createEdgeHeap();
+	directed = dir;
 	if (directed = true)changeToDirected();
 	else changeToNotDirected();
 }
@@ -111,39 +113,42 @@ EdgeHeap * AdjacencyList::getVerticeEdges(int verticle)
 void AdjacencyList::changeToDirected()
 {
 	int start, end, weight;
-	loadFromFile();
-	createEdgeHeap();
+	
+	
 	list = new Edge *[V];
 	for (int i = 0; i < V; i++) addVertex(i);
+	int n = 2;
 	for (int i = 0; i < E; i++)
 	{
 
-		file >> start;
-		file >> end;
-		file >> weight;
+		start = graphArray[n];
+		end = graphArray[n + 1];
+		weight = graphArray[n + 2];
 		addEdge(start, end, weight, i);
-
+		n = n + 3;
 	}
-	file.close();
+	
 }
 
 void AdjacencyList::changeToNotDirected()
 {
 	int start, end, weight;
-	loadFromFile();
-	createEdgeHeap();
+
+	
 	list = new Edge *[V];
 	for (int i = 0; i < V; i++) addVertex(i);
+	int n = 2;
 	for (int i = 0; i < E; i++)
 	{
 
-		file >> start;
-		file >> end;
-		file >> weight;
+		start = graphArray[n];
+		end = graphArray[n+1];
+		weight= graphArray[n+2];
 		addEdge(start, end, weight, i);
 		addEdge(end, start, weight, i);
+		n = n + 3;
 
 	}
-	file.close();
+	
 }
 
