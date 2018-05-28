@@ -39,13 +39,15 @@ int MainMenu::choice()
 }
 
 void MainMenu::tree() {
-
+	graph->directed = false;
+	graph->changeDir();
 	graph->MST();
 
 }
 void MainMenu::path()
 {
-	
+	graph->directed = true;
+	graph->changeDir();
 	graph->path();
 }
 void MainMenu::clearAndPause() {
@@ -59,95 +61,95 @@ void MainMenu::clear() {
 
 void MainMenu::countAll()
 {
-	//structure = AdjList;
-	//W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
-	//count(AdjList, W, E);
-	//W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
-	//count(AdjList, W, E);
-	//W = 150; E = (int)(0.25 * (W*(W - 1))); // 25%
-	//count(AdjList, W, E);
-	//W = 200; E = (int)(0.25 * (W*(W - 1))); // 25%
-	//count(AdjList, W, E);
-	//W = 250; E = (int)(0.25 * (W*(W - 1))); // 25%
-	//count(AdjList, W, E);
-	////50%
-	//W = 10;  E = (int)(0.50 * (W*(W - 1))); 
-	//count(AdjList, W, E);
-	//W = 100; E = (int)(0.50 * (W*(W - 1))); 
-	//count(AdjList, W, E);
-	//W = 150; E = (int)(0.50 * (W*(W - 1))); 
-	//count(AdjList, W, E);
-	//W = 200; E = (int)(0.50 * (W*(W - 1))); 
-	//count(AdjList, W, E);
-	//W = 250; E = (int)(0.50 * (W*(W - 1))); 
-	//count(AdjList, W, E);
-	////75%
-	//W = 10;  E = (int)(0.75 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 100; E = (int)(0.75 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 150; E = (int)(0.75 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 200; E = (int)(0.75 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 250; E = (int)(0.75 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	////99%
-	//W = 10;  E = (int)(0.99 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 100; E = (int)(0.99 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	//W = 150; E = (int)(0.99 * (W*(W - 1)));
-	//count(AdjList, W, E);
-	/*W = 200; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);*/
-	/*W = 250; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);*/
+	//25%
+	W = 10;  E = (int)(0.25 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 25; E = (int)(0.25 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 50; E = (int)(0.25 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 75; E = (int)(0.25 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 100; E = (int)(0.25 * (W*(W - 1)));
+	count(AdjList, W, E);
+	//50%
+	W = 10;  E = (int)(0.50 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 25; E = (int)(0.50 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 50; E = (int)(0.50 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 75; E = (int)(0.50 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 100; E = (int)(0.50 * (W*(W - 1)));
+	count(AdjList, W, E);
+	//75%
+	W = 10;  E = (int)(0.75 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 25; E = (int)(0.75 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 50; E = (int)(0.75 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 75; E = (int)(0.75 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 100; E = (int)(0.75 * (W*(W - 1)));
+	count(AdjList, W, E);
+	//99%
+	W = 10;  E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 25; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 50; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 75; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);
+	W = 100; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);
 
 	//MATRIX
 	structure = InciMatrix;
 	W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
 	count(InciMatrix, W, E);
+	W = 25; E = (int)(0.25 * (W*(W - 1))); // 25%
+	count(InciMatrix, W, E);
+	W = 50; E = (int)(0.25 * (W*(W - 1))); // 25%
+	count(InciMatrix, W, E);
+	W = 75; E = (int)(0.25 * (W*(W - 1))); // 25%
+	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 150; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 200; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 250; E = (int)(0.25 * (W*(W - 1))); // 25%
 	count(InciMatrix, W, E);
 	//50%
 	W = 10;  E = (int)(0.50 * (W*(W - 1)));
 	count(InciMatrix, W, E);
+	W = 25; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 50; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 75; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 150; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 200; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 250; E = (int)(0.50 * (W*(W - 1)));
 	count(InciMatrix, W, E);
 	//75%
 	W = 10;  E = (int)(0.75 * (W*(W - 1)));
 	count(InciMatrix, W, E);
+	W = 25; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 50; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 75; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 150; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 200; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 250; E = (int)(0.75 * (W*(W - 1)));
 	count(InciMatrix, W, E);
 	//99%
 	W = 10;  E = (int)(0.99 * (W*(W - 1)));
 	count(InciMatrix, W, E);
+	W = 25; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 50; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 75; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 150; E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 200; E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 250; E = (int)(0.99 * (W*(W - 1)));
 	count(InciMatrix, W, E);
 	
 }

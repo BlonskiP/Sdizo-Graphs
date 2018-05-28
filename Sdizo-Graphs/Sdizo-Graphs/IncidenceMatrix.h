@@ -12,6 +12,7 @@ public:
 	void print(); //prints
 	void changeRep(); //changes representaion
 	void fillEdgeHeap();
+	EdgeHeap *getVerticeEdgesPath(int verticle);
 	EdgeHeap * getVerticeEdges(int verticle);
 	void changeToDirected();
 	void changeToNotDirected();

@@ -39,7 +39,7 @@ void DijkstraSolver::solve(int startVerticle)
 
 	for (int i = 0; i < G->V - 1; i++)
 	{
-		tmpHeap->pushHeap(G->getVerticeEdges(v)); // Wez wszystkie krawedzie wierzcholka i
+		tmpHeap->pushHeap(G->getVerticeEdgesPath(v)); // Wez wszystkie krawedzie wierzcholka i
 		heapSize = tmpHeap->heapSize; //heapSize to ilosc wierzcholkow
 		for (int k = 0; k < heapSize; k++) //Sprawdzaj krawedzie
 		{

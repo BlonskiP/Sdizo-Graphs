@@ -47,6 +47,7 @@ public:
 	void createEdgeHeap();
 	void kruskalSolver();
 	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
+	virtual EdgeHeap* getVerticeEdgesPath(int verticle) = 0;
 	void primSolver();
 	void dijSolver();
 	void bellSolver();

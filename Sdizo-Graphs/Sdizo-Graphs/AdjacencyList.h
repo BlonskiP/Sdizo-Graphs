@@ -15,6 +15,7 @@ public:
 	void changeRep(); //changes representaion
 	void fillEdgeHeap();
 	//void kruskalSolver();
+	EdgeHeap *getVerticeEdgesPath(int verticle);
 	EdgeHeap * getVerticeEdges(int verticle);
 	void changeToDirected();
 	void changeToNotDirected();

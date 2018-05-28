@@ -1,0 +1,40 @@
+Macierz incydencji
+W :10E :22 gestosc: 24%
+Kruskal: 66.88[us]
+Prim: 32.72[us] 
+Dijkstra: 18.57[us]
+Bellman-Ford: 67.4[us]
+
+
+
+Macierz incydencji
+W :100E :2475 gestosc: 25%
+Macierz incydencji
+W :10E :22 gestosc: 24%
+Kruskal: 91.74[us]
+Prim: 31.15[us] 
+Dijkstra: 19.42[us]
+Bellman-Ford: 66.86[us]
+
+
+
+Macierz incydencji
+W :100E :2475 gestosc: 25%
+Kruskal: 207987[us]
+Prim: 7371.55[us] 
+Dijkstra: 3598.26[us]
+Bellman-Ford: 27837.7[us]
+
+
+
+Macierz incydencji
+W :150E :5587 gestosc: 25%
+Kruskal: 1.07833e+06[us]
+Prim: 21553[us] 
+Dijkstra: 10336[us]
+Bellman-Ford: 82191.8[us]
+
+
+
+Macierz incydencji
+W :200E :9950 gestosc: 25%

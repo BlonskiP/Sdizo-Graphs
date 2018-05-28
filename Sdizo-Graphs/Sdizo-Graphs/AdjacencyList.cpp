@@ -79,6 +79,11 @@ void AdjacencyList::changeRep()
 
 
 
+EdgeHeap * AdjacencyList::getVerticeEdgesPath(int verticle)
+{
+	return getVerticeEdges(verticle);
+}
+
 EdgeHeap * AdjacencyList::getVerticeEdges(int verticle)
 {
 	EdgeHeap* tmpHeap = new EdgeHeap(3);

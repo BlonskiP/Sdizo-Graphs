@@ -80,6 +80,19 @@ void IncidenceMatrix::changeRep()
 }
 
 
+EdgeHeap * IncidenceMatrix::getVerticeEdgesPath(int verticle)
+{
+	EdgeHeap *tmp = new EdgeHeap(3);
+	int n = 0;
+	for (int i = 0; i<E - 1; i++)
+		if (list[verticle][i].next == &list[verticle][i] && list[verticle][i].cost>0) {
+
+			tmp->push(list[verticle][i]);
+		}
+	//tmp->printHeap();
+	return tmp;
+}
+
 EdgeHeap * IncidenceMatrix::getVerticeEdges(int verticle)
 {
 	EdgeHeap *tmp = new EdgeHeap(3);
