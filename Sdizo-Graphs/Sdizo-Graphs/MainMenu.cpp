@@ -39,31 +39,14 @@ int MainMenu::choice()
 }
 
 void MainMenu::tree() {
-	graph->kruskal=new KruskalSolver(graph->V,graph->E,graph);
-	graph->prim = new PrimSolver(graph->V, graph->E, graph);
-	graph->directed = false;
-	graph->changeDir();
-	graph->kruskalSolver();
-	graph->kruskal->printTree();
-	delete graph->kruskal;
-	graph->primSolver();
-	graph->prim->printTree();
-	delete graph->prim;
+
+	graph->MST();
+
 }
 void MainMenu::path()
 {
 	
-	graph->dij = new DijkstraSolver(graph->V, graph->E, graph);
-	graph->bellman = new Bellman(graph->V, graph->E, graph);
-	graph->directed =true;
-	graph->changeDir();
-	graph->dijSolver();
-	graph->dij->print();
-	graph->bellSolver();
-	graph->bellman->print();
-	
-	delete graph->dij;
-	delete graph->bellman;
+	graph->path();
 }
 void MainMenu::clearAndPause() {
 	
@@ -76,39 +59,127 @@ void MainMenu::clear() {
 
 void MainMenu::countAll()
 {
-	
+	//structure = AdjList;
+	//W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(AdjList, W, E);
+	//W = 150; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(AdjList, W, E);
+	//W = 200; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(AdjList, W, E);
+	//W = 250; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(AdjList, W, E);
+	////50%
+	//W = 10;  E = (int)(0.50 * (W*(W - 1))); 
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.50 * (W*(W - 1))); 
+	//count(AdjList, W, E);
+	//W = 150; E = (int)(0.50 * (W*(W - 1))); 
+	//count(AdjList, W, E);
+	//W = 200; E = (int)(0.50 * (W*(W - 1))); 
+	//count(AdjList, W, E);
+	//W = 250; E = (int)(0.50 * (W*(W - 1))); 
+	//count(AdjList, W, E);
+	////75%
+	//W = 10;  E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 150; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 200; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 250; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	////99%
+	//W = 10;  E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 150; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	/*W = 200; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);*/
+	/*W = 250; E = (int)(0.99 * (W*(W - 1)));
+	count(AdjList, W, E);*/
+
+	//MATRIX
+	structure = InciMatrix;
 	W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(AdjList, W, E);
+	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(AdjList, W, E);
+	count(InciMatrix, W, E);
 	W = 150; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(AdjList, W, E);
+	count(InciMatrix, W, E);
 	W = 200; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(AdjList, W, E);
+	count(InciMatrix, W, E);
 	W = 250; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(AdjList, W, E);
+	count(InciMatrix, W, E);
+	//50%
+	W = 10;  E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 100; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 150; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 200; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 250; E = (int)(0.50 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	//75%
+	W = 10;  E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 100; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 150; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 200; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 250; E = (int)(0.75 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	//99%
+	W = 10;  E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 100; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 150; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 200; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	W = 250; E = (int)(0.99 * (W*(W - 1)));
+	count(InciMatrix, W, E);
+	
 }
 
 void MainMenu::count(structureGraph type, int verticles, int edges)
 {
+	std::ofstream output("result.txt", std::ios::app);
+	std::cout << "\n";
+	std::cout << "*****************************";
+	std::cout << "\n";
 	W = verticles;
 	E = edges;
-	reloadStructure();
-	if (type == AdjList) cout << "Lista sasiedzctwa" << endl; 
-	else cout << "Macierz incydencji" << endl;
+	if (type == AdjList) output << "Lista sasiedzctwa" << endl;
+	else output << "Macierz incydencji" << endl;
 
-	cout << "Gest " << " W "<<   setw(5) << "KRUSKAL" << setw(10) << "PRIM" << setw(10) << "DIJ" << setw(10) << "BELL" << endl;
-	cout << (double)verticles / (double)edges << "||" << W << "||" << setw(5);
+	output << "W :" << W;
+	output << "E :" << E;
+	output << " gestosc: " << round((double)(edges)*100 / (double)(verticles*(verticles - 1))) <<"%" << std::endl;
 	measureType = treeM;
 	measure(&MainMenu::kruskal);
-	cout << measurement << "[us] ||" << setw(10);
+	output << "Kruskal: " << measurement << "[us]" << endl;
 	measure(&MainMenu::prim);
-	cout << measurement << "[us] ||" << setw(10);
+	output << "Prim: " << measurement << "[us] " << endl;
 	measureType = pathM;
 	measure(&MainMenu::dij);
-	cout << measurement << "[us] ||" << setw(10);
+	output << "Dijkstra: " << measurement << "[us]" << endl;
 	measure(&MainMenu::bell);
-	cout<< measurement << "[us] ||" << endl;
+	output << "Bellman-Ford: " << measurement << "[us]" << endl;
+	output << endl;
+	output << endl;
+	output << endl;
+	output.close();
 }
 
 void MainMenu::countMeasure()
@@ -126,9 +197,9 @@ void MainMenu::measure(void(MainMenu::* function)(void))
 	for (int i = 0; i < 100; i++)
 	{
 		
-		graph = new AdjacencyList(false);
+		reloadStructure();
 		
-		if (measureType = treeM)graph->directed = false;
+		if (measureType == treeM)graph->directed = false;
 		else graph->directed = true;
 		graph->generate(W,E);
 		measureTab[i] = timeCount(function);
@@ -168,6 +239,7 @@ void MainMenu::kruskal()
 {
 
 	graph->kruskalSolver();
+	
 }
 
 void MainMenu::prim()

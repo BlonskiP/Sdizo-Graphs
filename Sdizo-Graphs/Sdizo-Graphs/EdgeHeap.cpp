@@ -13,7 +13,7 @@ EdgeHeap::EdgeHeap(int edges)
 EdgeHeap::~EdgeHeap()
 {
 	//std::cout << "KILL HEAP";
-	delete heap;
+	delete[] heap;
 }
 
 void EdgeHeap::push(Edge edge)
@@ -49,8 +49,8 @@ void EdgeHeap::pushHeap(EdgeHeap *edges)
 
 Edge EdgeHeap::pop()
 {
-	if (heapSize <= 0)
-		return heap[0];
+	if (heapSize < 0)
+		std::cout << "ERROR TRYING TO POP FORM EMPTY HEAP" << std::endl;
 		if (heapSize == 1)
 		{
 			heapSize--;

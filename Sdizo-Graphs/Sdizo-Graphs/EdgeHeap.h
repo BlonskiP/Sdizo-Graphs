@@ -23,6 +23,7 @@ public:
 	int heapSize = 0;
 	int maxSize = 0;
 	Edge *heap;
+	
 	EdgeHeap(int edges);
 	~EdgeHeap();
 	void push(Edge edge);

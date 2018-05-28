@@ -18,6 +18,9 @@ DijkstraSolver::DijkstraSolver(int V, int E, Graph *graf)
 
 DijkstraSolver::~DijkstraSolver()
 {
+	//std::cout << " DIE DIJKSTRA";
+
+
 	delete[] verticlesCost;
 	delete[] verticles;
 	delete[] preVerticle;
@@ -84,7 +87,7 @@ void DijkstraSolver::print()
 
 int DijkstraSolver::findCheap()
 {
-	int numer;
+	int numer = 0;
 	int cheap = MAXINT;
 	for (int i = 0; i <G->V; i++)
 	{

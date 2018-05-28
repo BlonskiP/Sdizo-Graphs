@@ -45,12 +45,13 @@ public:
 		E = edge;
 	}
 	void createEdgeHeap();
-	virtual void fillEdgeHeap() = 0;
 	void kruskalSolver();
 	virtual EdgeHeap* getVerticeEdges(int verticle) = 0;
 	void primSolver();
 	void dijSolver();
 	void bellSolver();
+	void MST();
+	void path();
 	virtual void changeToDirected() = 0;
 	virtual void changeToNotDirected() = 0;
 	void generate(int W, int E);
@@ -58,6 +59,7 @@ public:
 	void changeDir();
 	void printArray();
 	virtual void ABS() = 0;
+	void toFile();
 };
 
 #endif

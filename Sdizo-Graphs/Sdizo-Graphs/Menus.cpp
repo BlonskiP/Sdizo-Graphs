@@ -55,5 +55,6 @@ void MainMenu::start()
 	default:
 		break;
 	}
+
 	if(end==false)start();
 }

@@ -18,7 +18,7 @@ Bellman::Bellman(int V, int E, Graph * graf)
 
 Bellman::~Bellman()
 {
-	
+	//std::cout << " DIE BELLMAN";
 	delete[] verticlesCost;
 	delete[] preVerticle;
 	delete tmpHeap;
@@ -27,7 +27,7 @@ Bellman::~Bellman()
 void Bellman::solve(int startVerticle)
 {
 	int v = startVerticle;
-	verticlesCost[v] = 0;
+	verticlesCost[v] = 0; //zerowanie kosztu 0
 	int heapSize = 0;
 	bool changes = true;
 	Edge *tmp;
@@ -35,21 +35,21 @@ void Bellman::solve(int startVerticle)
 	
 	while (changes)
 	{
-		changes = false;
-		tmpHeap->pushHeap(G->getVerticeEdges(v));
+		changes = false; //flaga zmian na fa³sz
+		tmpHeap->pushHeap(G->getVerticeEdges(v)); // pobierz krawedzie aktualnego	
 		heapSize = tmpHeap->heapSize;
-		for (int k = 0; k < heapSize; k++)
+		for (int k = 0; k < heapSize; k++) //sprawdz sasiadow	
 		{
 			tmp = &tmpHeap->pop();
-			if (verticlesCost[tmp->to] >(tmp->cost + verticlesCost[tmp->from]))
+			if (verticlesCost[tmp->to] >(tmp->cost + verticlesCost[tmp->from])) //jezeli koszt do sasiada jest wyzszy to aktualizuj
 			{
 				verticlesCost[tmp->to] = tmp->cost + verticlesCost[tmp->from];
 				preVerticle[tmp->to] = tmp->from;
-				changes = true;
+				changes = true; // jezeli aktualizowales to flaga do gory
 			};
 		}
 		
-		for (int i = 1; i < G->V; i++)
+		for (int i = 1; i < G->V; i++) //pentla po wierzcholkach 
 		{
 		tmpHeap->pushHeap(G->getVerticeEdges(i));
 		heapSize = tmpHeap->heapSize;

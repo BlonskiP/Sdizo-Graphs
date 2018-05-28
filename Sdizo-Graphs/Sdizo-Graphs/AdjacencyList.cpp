@@ -7,7 +7,6 @@
 AdjacencyList::AdjacencyList(bool dir)
 {
 	loadFromFile();
-	createEdgeHeap();
 	directed = dir;
 	if (directed == true)changeToDirected();
 	else changeToNotDirected();
@@ -24,7 +23,7 @@ AdjacencyList::AdjacencyList(int size, int edge)
 
 AdjacencyList::~AdjacencyList()
 {
-	std::cout << "LIST IS DEAD";
+	//std::cout << "LIST IS DEAD";
 	for (int i = 0; i < V; i++)
 	{
 		p = list[i];
@@ -37,7 +36,6 @@ AdjacencyList::~AdjacencyList()
 	}
 	delete[] list;
 	delete heap;
-	delete kruskal;
 	
 
 
@@ -79,22 +77,7 @@ void AdjacencyList::changeRep()
 {
 }
 
-void AdjacencyList::fillEdgeHeap()
-{
-	Edge *tmp;
-	for (int i = 0; i < V; i++)
-	{
-		tmp = list[i];
-		while (tmp != nullptr)
-		{
-			heap->push(*tmp);
-			
-			tmp = tmp->next;
-		}
-		
-	}
 
-}
 
 EdgeHeap * AdjacencyList::getVerticeEdges(int verticle)
 {

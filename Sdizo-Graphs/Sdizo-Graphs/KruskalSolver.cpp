@@ -4,6 +4,7 @@
 
 KruskalSolver::KruskalSolver(int V, int E, Graph *start)
 {
+	start->directed;
 	maxEdges = V-1;
 	edges = E;
 	startingHeap = new EdgeHeap(E);
@@ -17,7 +18,7 @@ KruskalSolver::KruskalSolver(int V, int E, Graph *start)
 }
 KruskalSolver::~KruskalSolver()
 {
-	std::cout << "KRUSKAL DELETE TEST";
+	//std::cout << "KRUSKAL DELETE TEST";
 	delete startingHeap;
 	delete endHeap;
 	delete nodes;

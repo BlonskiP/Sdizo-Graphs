@@ -12,7 +12,7 @@ Graph::Graph()
 
 Graph::~Graph()
 {
-	
+	delete[] graphArray;
 }
 
 bool Graph::loadFromFile()
@@ -63,7 +63,7 @@ void Graph::kruskalSolver()
 	   
 		kruskal = new KruskalSolver(V, E, this);
 		kruskal->solve();
-		
+		delete kruskal;
 	
 }
 
@@ -72,7 +72,7 @@ void Graph::primSolver()
 	
 	prim = new PrimSolver(V, E, this);
 	prim->solve();
-	
+	delete prim;
 
 }
 
@@ -82,6 +82,7 @@ void Graph::dijSolver()
 	
 	dij = new DijkstraSolver(V, E, this);
 	dij->solve(0);
+	delete dij;
 	
 }
 
@@ -91,7 +92,31 @@ void Graph::bellSolver()
 	
 	bellman = new Bellman(V, E, this);
 	bellman->solve(0);
-	
+	delete bellman;
+}
+
+void Graph::MST()
+{
+	kruskal = new KruskalSolver(V, E, this);
+	kruskal->solve();
+	kruskal->printTree();
+	prim = new PrimSolver(V, E, this);
+	prim->solve();
+	prim->printTree();
+	delete prim;
+}
+
+void Graph::path()
+{
+	dij = new DijkstraSolver(V, E, this);
+	dij->solve(0);
+	dij->print();
+
+	bellman = new Bellman(V, E, this);
+	bellman->solve(0);
+	bellman->print();
+	delete bellman;
+	delete dij;
 }
 
 void Graph::generate(int W, int E)
@@ -129,7 +154,7 @@ void Graph::generate(int W, int E)
 			array[y] = true;
 			graphArray[n] = x;
 			graphArray[n + 1] = y;
-			graphArray[n + 2] = rand() % W;
+			graphArray[n + 2] = rand() % W +1;
 			n = n + 3;
 			i++;
 			x = y;
@@ -147,7 +172,7 @@ void Graph::generate(int W, int E)
 		{
 			graphArray[n] = x;
 			graphArray[n + 1] = y;
-			graphArray[n + 2] = rand() % (W-1);
+			graphArray[n + 2] = rand() % W +1;
 			n = n + 3;
 			i++;
 		}
@@ -168,6 +193,7 @@ void Graph::generate(int W, int E)
 	}
 	
 	changeDir();
+	//toFile();
 }
 bool Graph::checkBools(bool * ar)
 {
@@ -197,6 +223,17 @@ void Graph::printArray()
 		std::cout << graphArray[i + 2] << " "<< std::endl;
 
 	}
+}
+
+void Graph::toFile()
+{
+	//printArray();
+	std::ofstream output("grafGenerowany.txt", std::ios::app);
+	output << graphArray[0] << " " << graphArray[1] << std::endl;
+	for (int i = 2; i < (2 + (E * 3)); i=i+3)
+		output << graphArray[i] <<" "<< graphArray[i + 1] <<" " << graphArray[i + 2] << std::endl;
+
+	output << "***********" << std::endl;
 }
 
 

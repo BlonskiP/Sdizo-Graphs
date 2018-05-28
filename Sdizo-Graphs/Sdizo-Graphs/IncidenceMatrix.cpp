@@ -5,7 +5,16 @@
 IncidenceMatrix::IncidenceMatrix(bool dir)
 {
 	loadFromFile();
-	createEdgeHeap();
+	list = new Edge *[V];
+	directed = dir;
+	for (int i = 0; i < V; i++)
+		addVertex(i);
+	if (directed == true)changeToDirected();
+	else changeToNotDirected();
+}
+
+IncidenceMatrix::IncidenceMatrix(int V, int E, bool dir)
+{
 	list = new Edge *[V];
 	directed = dir;
 	for (int i = 0; i < V; i++)
@@ -33,6 +42,7 @@ void IncidenceMatrix::addEdge(int start, int end, int cost, int number) {
 	list[start][number].number = number;
 	list[start][number].from = start;
 	list[start][number].to = end;
+	list[start][number].next = &list[start][number];
 }
 
 void IncidenceMatrix::print()
@@ -60,29 +70,22 @@ void IncidenceMatrix::print()
 		}
 		std::cout << std::endl;
 	}
-	
+	//for (int i = 0; i < V; i++)
+	//	for (int k = 0; k < E; k++)
+	//		std::cout << list[i][k].from << " " << list[i][k].to << " " << list[i][k].cost << " " << list[i][k].number << std::endl;
 }
 
 void IncidenceMatrix::changeRep()
 {
 }
 
-void IncidenceMatrix::fillEdgeHeap()
-{
-	//Edge *tmp;
-	for (int i = 0; i < V; i++)
-	{
-		for (int k = 0; k < E; k++)
-			if (list[i][k].cost > 0) heap->push(list[i][k]);
-	}
-}
 
 EdgeHeap * IncidenceMatrix::getVerticeEdges(int verticle)
 {
 	EdgeHeap *tmp = new EdgeHeap(3);
 	int n = 0;
-	for(int i=0;i<E;i++)
-		if (list[verticle][i].cost > 0) {
+	for(int i=0;i<E-1;i++)
+		if (list[verticle][i].next==&list[verticle][i]) {
 			
 			tmp->push(list[verticle][i]);
 		}

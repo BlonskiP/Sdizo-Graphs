@@ -1,0 +1,175 @@
+Lista sasiedzctwa
+W :10E :22 gestosc: 24%
+Kruskal: 72.57[us]
+Prim: 21.57[us] 
+Dijkstra: 17.26[us]
+Bellman-Ford: 51.36[us]
+
+
+
+Lista sasiedzctwa
+W :100E :2475 gestosc: 25%
+Kruskal: 2840.33[us]
+Prim: 2606.28[us] 
+Dijkstra: 2898.53[us]
+Bellman-Ford: 19305.5[us]
+
+
+
+Lista sasiedzctwa
+W :150E :5587 gestosc: 25%
+Kruskal: 7280.52[us]
+Prim: 6846.32[us] 
+Dijkstra: 7753.59[us]
+Bellman-Ford: 56544.9[us]
+
+
+
+Lista sasiedzctwa
+W :200E :9950 gestosc: 25%
+Kruskal: 14533.2[us]
+Prim: 13788[us] 
+Dijkstra: 15802.1[us]
+Bellman-Ford: 126012[us]
+
+
+
+Lista sasiedzctwa
+W :250E :15562 gestosc: 25%
+Kruskal: 25207.4[us]
+Prim: 24065.2[us] 
+Dijkstra: 27660.9[us]
+Bellman-Ford: 221170[us]
+
+
+
+Lista sasiedzctwa
+W :10E :45 gestosc: 50%
+Kruskal: 38.56[us]
+Prim: 32.91[us] 
+Dijkstra: 32.4[us]
+Bellman-Ford: 104.06[us]
+
+
+
+Lista sasiedzctwa
+W :100E :4950 gestosc: 50%
+Kruskal: 7144.29[us]
+Prim: 6775.51[us] 
+Dijkstra: 7946.36[us]
+Bellman-Ford: 55124.8[us]
+
+
+
+Lista sasiedzctwa
+W :150E :11175 gestosc: 50%
+Kruskal: 19599.9[us]
+Prim: 18701[us] 
+Dijkstra: 21578.6[us]
+Bellman-Ford: 171926[us]
+
+
+
+Lista sasiedzctwa
+W :200E :19900 gestosc: 50%
+Kruskal: 41144.4[us]
+Prim: 39286.1[us] 
+Dijkstra: 45149.5[us]
+Bellman-Ford: 375724[us]
+
+
+
+Lista sasiedzctwa
+W :250E :31125 gestosc: 50%
+Kruskal: 76433[us]
+Prim: 73053.4[us] 
+Dijkstra: 82725.1[us]
+Bellman-Ford: 694738[us]
+
+
+
+Lista sasiedzctwa
+W :10E :67 gestosc: 74%
+Kruskal: 60.56[us]
+Prim: 49.68[us] 
+Dijkstra: 53.73[us]
+Bellman-Ford: 184.54[us]
+
+
+
+Lista sasiedzctwa
+W :100E :7425 gestosc: 75%
+Kruskal: 13379.6[us]
+Prim: 12690.9[us] 
+Dijkstra: 14690.4[us]
+Bellman-Ford: 102747[us]
+
+
+
+Lista sasiedzctwa
+W :150E :16762 gestosc: 75%
+Kruskal: 37917.4[us]
+Prim: 36147.3[us] 
+Dijkstra: 41442.4[us]
+Bellman-Ford: 329037[us]
+
+
+
+Lista sasiedzctwa
+W :200E :29850 gestosc: 75%
+Kruskal: 80666.7[us]
+Prim: 77807.1[us] 
+Dijkstra: 87635.6[us]
+
+Lista sasiedzctwa
+W :250E :46687 gestosc: 75%
+Kruskal: 144429[us]
+Prim: 140020[us] 
+Dijkstra: 156767[us]
+Bellman-Ford: 1.46199e+06[us]
+
+
+
+Lista sasiedzctwa
+W :10E :89 gestosc: 99%
+Kruskal: 77.3[us]
+Prim: 66.19[us] 
+Dijkstra: 74.18[us]
+Bellman-Ford: 272.16[us]
+
+
+
+Lista sasiedzctwa
+W :100E :9801 gestosc: 99%
+Kruskal: 19672.6[us]
+Prim: 18833.4[us] 
+Dijkstra: 21707[us]
+Bellman-Ford: 174924[us]
+
+
+
+Lista sasiedzctwa
+W :150E :22126 gestosc: 99%
+Kruskal: 57397.6[us]
+Prim: 55526.3[us] 
+Dijkstra: 63164[us]
+Lista sasiedzctwa
+
+W :200E :39402 gestosc: 99%
+Kruskal: 126859[us]
+Prim: 125932[us] 
+Dijkstra: 135514[us]
+Bellman-Ford: 1.3086e+06[us]
+
+
+
+
+Lista sasiedzctwa
+W :250E :61627 gestosc: 99%
+Kruskal: 238531[us]
+Prim: 231399[us] 
+Dijkstra: 253787[us]
+Bellman-Ford: 2.5317e+06[us]
+
+
+

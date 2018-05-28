@@ -5,6 +5,7 @@ class IncidenceMatrix :
 {
 public:
 	IncidenceMatrix(bool dir);
+	IncidenceMatrix(int V, int E, bool dir);
 	~IncidenceMatrix();
 	void addVertex(int i);
 	void addEdge(int start, int end, int cost, int number);
