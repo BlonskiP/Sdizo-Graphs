@@ -61,92 +61,92 @@ void MainMenu::clear() {
 
 void MainMenu::countAll()
 {
-	//25%
-	W = 10;  E = (int)(0.25 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 25; E = (int)(0.25 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 50; E = (int)(0.25 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 75; E = (int)(0.25 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 100; E = (int)(0.25 * (W*(W - 1)));
-	count(AdjList, W, E);
-	//50%
-	W = 10;  E = (int)(0.50 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 25; E = (int)(0.50 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 50; E = (int)(0.50 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 75; E = (int)(0.50 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 100; E = (int)(0.50 * (W*(W - 1)));
-	count(AdjList, W, E);
-	//75%
-	W = 10;  E = (int)(0.75 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 25; E = (int)(0.75 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 50; E = (int)(0.75 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 75; E = (int)(0.75 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 100; E = (int)(0.75 * (W*(W - 1)));
-	count(AdjList, W, E);
-	//99%
-	W = 10;  E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 25; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 50; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 75; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);
-	W = 100; E = (int)(0.99 * (W*(W - 1)));
-	count(AdjList, W, E);
+	////25%
+	//W = 10;  E = (int)(0.25 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 25; E = (int)(0.25 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 50; E = (int)(0.25 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 75; E = (int)(0.25 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.25 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	////50%
+	//W = 10;  E = (int)(0.50 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 25; E = (int)(0.50 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 50; E = (int)(0.50 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 75; E = (int)(0.50 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.50 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	////75%
+	//W = 10;  E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 25; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 50; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 75; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.75 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	////99%
+	//W = 10;  E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 25; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 50; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 75; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
+	//W = 100; E = (int)(0.99 * (W*(W - 1)));
+	//count(AdjList, W, E);
 
-	//MATRIX
-	structure = InciMatrix;
-	W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 25; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 50; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 75; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
-	count(InciMatrix, W, E);
-	//50%
-	W = 10;  E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 25; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 50; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 75; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 100; E = (int)(0.50 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	//75%
-	W = 10;  E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 25; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 50; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 75; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 100; E = (int)(0.75 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	//99%
-	W = 10;  E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 25; E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
-	W = 50; E = (int)(0.99 * (W*(W - 1)));
-	count(InciMatrix, W, E);
+	////MATRIX
+	//structure = InciMatrix;
+	//W = 10;  E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(InciMatrix, W, E);
+	//W = 25; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(InciMatrix, W, E);
+	//W = 50; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(InciMatrix, W, E);
+	//W = 75; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(InciMatrix, W, E);
+	//W = 100; E = (int)(0.25 * (W*(W - 1))); // 25%
+	//count(InciMatrix, W, E);
+	////50%
+	//W = 10;  E = (int)(0.50 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 25; E = (int)(0.50 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 50; E = (int)(0.50 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 75; E = (int)(0.50 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 100; E = (int)(0.50 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	////75%
+	//W = 10;  E = (int)(0.75 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 25; E = (int)(0.75 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 50; E = (int)(0.75 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 75; E = (int)(0.75 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 100; E = (int)(0.75 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	////99%
+	//W = 10;  E = (int)(0.99 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 25; E = (int)(0.99 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
+	//W = 50; E = (int)(0.99 * (W*(W - 1)));
+	//count(InciMatrix, W, E);
 	W = 75; E = (int)(0.99 * (W*(W - 1)));
 	count(InciMatrix, W, E);
 	W = 100; E = (int)(0.99 * (W*(W - 1)));
@@ -170,14 +170,14 @@ void MainMenu::count(structureGraph type, int verticles, int edges)
 	output << " gestosc: " << round((double)(edges)*100 / (double)(verticles*(verticles - 1))) <<"%" << std::endl;
 	measureType = treeM;
 	measure(&MainMenu::kruskal);
-	output << "Kruskal: " << measurement << "[us]" << endl;
+	output << "Kruskal: " << measurement << "[ms]" << endl;
 	measure(&MainMenu::prim);
-	output << "Prim: " << measurement << "[us] " << endl;
+	output << "Prim: " << measurement << "[ms] " << endl;
 	measureType = pathM;
 	measure(&MainMenu::dij);
-	output << "Dijkstra: " << measurement << "[us]" << endl;
+	output << "Dijkstra: " << measurement << "[ms]" << endl;
 	measure(&MainMenu::bell);
-	output << "Bellman-Ford: " << measurement << "[us]" << endl;
+	output << "Bellman-Ford: " << measurement << "[ms]" << endl;
 	output << endl;
 	output << endl;
 	output << endl;
@@ -195,7 +195,7 @@ void MainMenu::countMeasure()
 
 void MainMenu::measure(void(MainMenu::* function)(void))
 {
-	measureTab = new int[100];
+	measureTab = new double[100];
 	for (int i = 0; i < 100; i++)
 	{
 		
@@ -233,7 +233,7 @@ double MainMenu::timeCount(void(MainMenu::* function)(void))
 	//	std::cout << "Time [s] = " << std::fixed << std::setprecision(3) << (float)elapsed / frequency << std::endl;
 	//	std::cout << "Time [ms] = " << std::setprecision(0) << (1000.0 * elapsed) / frequency << std::endl;
 	//	std::cout << "Time [us] = " << std::setprecision(0) << (1000000.0 * elapsed) / frequency << std::endl << std::endl;
-	measure = (1000000.0 * elapsed) / frequency;
+	measure = (1000.0 * elapsed) / frequency;
 	return measure;
 }
 

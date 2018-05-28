@@ -126,3 +126,39 @@ Bellman-Ford: 53.7767[ms]
 
 Lista sasiedzctwa
 W :100E :7425 gestosc: 75%
+Kruskal: 1888.36[ms]
+Prim: 39.1453[ms] 
+Dijkstra: 16.3206[ms]
+Bellman-Ford: 119.749[ms]
+
+
+
+Lista sasiedzctwa
+W :10E :89 gestosc: 99%
+Kruskal: 0.468436[ms]
+Prim: 0.152908[ms] 
+Dijkstra: 0.0779586[ms]
+Bellman-Ford: 0.367831[ms]
+
+
+
+Lista sasiedzctwa
+W :25E :594 gestosc: 99%
+Kruskal: 13.4596[ms]
+Prim: 1.5541[ms] 
+Dijkstra: 0.749293[ms]
+Bellman-Ford: 4.24395[ms]
+
+
+
+Lista sasiedzctwa
+W :50E :2425 gestosc: 99%
+Kruskal: 220.36[ms]
+Prim: 9.47134[ms] 
+Dijkstra: 4.14468[ms]
+Bellman-Ford: 27.0869[ms]
+
+
+
+Lista sasiedzctwa
+W :75E :5494 gestosc: 99%

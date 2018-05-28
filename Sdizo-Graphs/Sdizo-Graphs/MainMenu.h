@@ -23,7 +23,7 @@ public:
 	}measureType;
 	Graph *graph;
 	int GivenChoice;
-	int* measureTab;
+	double* measureTab;
 	double measurement;
 	MainMenu();
 	~MainMenu();

@@ -353,10 +353,3 @@ Bellman-Ford: 80.4799[ms]
 
 Macierz incydencji
 W :100E :9801 gestosc: 99%
-Kruskal: 3177.33[ms]
-Prim: 61.0895[ms] 
-Dijkstra: 24.6734[ms]
-Bellman-Ford: 180.292[ms]
-
-
-
